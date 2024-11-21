@@ -1,0 +1,8 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: rand 1 -1 ~> ⊥ ∧ ⊥
+-- DEBUG: is_bottom ⊥ ∧ ⊥ ~> true
+stat trace: tests/20_reduced/0112_rand_empty.c:3.2-17: ⊥
+tests/20_reduced/0112_rand_empty.c:4.2-11: ⊥
+stat trace: tests/20_reduced/0112_rand_empty.c:4.2-11: ⊥
+stat trace: tests/20_reduced/0112_rand_empty.c:1.0-5.1: ⊥
+analysis ended

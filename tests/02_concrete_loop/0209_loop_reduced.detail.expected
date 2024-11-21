@@ -1,0 +1,19 @@
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; [x=6;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; [x=6;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:4.4-14: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.15-5.3: { [x=2;]; [x=4;]; [x=6;]; [x=8;]; [x=10;]; [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:3.2-5.3: { [x=12;]; }
+tests/02_concrete_loop/0209_loop_reduced.c:6.2-11: { [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:6.2-11: { [x=12;]; }
+stat trace: tests/02_concrete_loop/0209_loop_reduced.c:1.0-7.1: { []; }
+analysis ended

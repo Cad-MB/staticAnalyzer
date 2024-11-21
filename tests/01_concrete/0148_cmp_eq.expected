@@ -1,0 +1,2 @@
+tests/01_concrete/0148_cmp_eq.c:6.14-25: { [x=16;y=16;]; }
+analysis ended

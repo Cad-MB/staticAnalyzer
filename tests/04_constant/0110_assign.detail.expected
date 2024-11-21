@@ -1,0 +1,17 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 4 ~> {4}
+-- DEBUG: is_bottom {4} ~> false
+stat trace: tests/04_constant/0110_assign.c:4.2-8: [ x in {4}, y in {0} ]
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+stat trace: tests/04_constant/0110_assign.c:5.2-8: [ x in {4}, y in {5} ]
+-- DEBUG: {4} + {5} ~> {9}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {9} + {2} ~> {11}
+-- DEBUG: is_bottom {11} ~> false
+stat trace: tests/04_constant/0110_assign.c:6.2-16: [ x in {11}, y in {5} ]
+tests/04_constant/0110_assign.c:7.2-11: [ x in {11} ]
+stat trace: tests/04_constant/0110_assign.c:7.2-11: [ x in {11}, y in {5} ]
+stat trace: tests/04_constant/0110_assign.c:1.0-8.1: [ ]
+analysis ended

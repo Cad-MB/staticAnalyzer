@@ -1,0 +1,5 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+tests/20_reduced/0101_decl.c:3.2-12: [ x in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0101_decl.c:3.2-12: [ x in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0101_decl.c:1.0-4.1: [ ]
+analysis ended

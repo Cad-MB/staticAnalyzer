@@ -1,0 +1,13 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 15 ~> odd ∧ [15;15]
+-- DEBUG: is_bottom odd ∧ [15;15] ~> false
+stat trace: tests/20_reduced/0119_assign.c:4.2-9: [ x in odd ∧ [15;15], y in even ∧ [0;0] ]
+-- DEBUG: const 2 ~> even ∧ [2;2]
+-- DEBUG: odd ∧ [15;15] + even ∧ [2;2] ~> odd ∧ [17;17]
+-- DEBUG: is_bottom odd ∧ [17;17] ~> false
+stat trace: tests/20_reduced/0119_assign.c:5.2-12: [ x in odd ∧ [15;15], y in odd ∧ [17;17] ]
+tests/20_reduced/0119_assign.c:6.2-11: [ y in odd ∧ [17;17] ]
+stat trace: tests/20_reduced/0119_assign.c:6.2-11: [ x in odd ∧ [15;15], y in odd ∧ [17;17] ]
+stat trace: tests/20_reduced/0119_assign.c:1.0-7.1: [ ]
+analysis ended

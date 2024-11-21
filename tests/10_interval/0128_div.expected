@@ -1,0 +1,2 @@
+tests/10_interval/0128_div.c:4.2-11: [ x in [25;52] ]
+analysis ended

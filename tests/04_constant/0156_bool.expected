@@ -1,0 +1,3 @@
+tests/04_constant/0156_bool.c:6.42-53: [ x in ⊤, y in ⊤ ]
+tests/04_constant/0156_bool.c:7.9-20: [ x in ⊤, y in ⊤ ]
+analysis ended

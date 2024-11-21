@@ -1,0 +1,25 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+stat trace: tests/10_interval/0136_else_true.c:3.2-8: [ x in [1;1] ]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: [1;1] <= [2;2] ~> [1;1], [2;2]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [2;2] ⊓ [2;2] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+-- DEBUG: const 5 ~> [5;5]
+-- DEBUG: is_bottom [5;5] ~> false
+stat trace: tests/10_interval/0136_else_true.c:4.14-20: [ x in [5;5] ]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: [1;1] > [2;2] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/10_interval/0136_else_true.c:4.26-33: ⊥
+stat trace: tests/10_interval/0136_else_true.c:4.2-33: [ x in [5;5] ]
+tests/10_interval/0136_else_true.c:5.2-11: [ x in [5;5] ]
+stat trace: tests/10_interval/0136_else_true.c:5.2-11: [ x in [5;5] ]
+stat trace: tests/10_interval/0136_else_true.c:1.0-6.1: [ ]
+analysis ended

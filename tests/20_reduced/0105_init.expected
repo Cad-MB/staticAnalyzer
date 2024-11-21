@@ -1,0 +1,2 @@
+tests/20_reduced/0105_init.c:6.2-12: [ x in even ∧ [2;2], y in odd ∧ [1;1] ]
+analysis ended

@@ -1,0 +1,3 @@
+tests/04_constant/0155_not.c:6.27-38: [ x in ⊤, y in ⊤ ]
+tests/04_constant/0155_not.c:7.9-20: [ x in ⊤, y in ⊤ ]
+analysis ended

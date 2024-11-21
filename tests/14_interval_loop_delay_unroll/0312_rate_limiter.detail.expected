@@ -1,0 +1,427 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:12.2-8: [ D in [0;0], R in [0;0], S in [0;0], X in [0;0], Y in [0;0] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] == [1;1] ~> [1;1], [1;1]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand -128 128 ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:14.4-23: [ D in [0;0], R in [0;0], S in [0;0], X in [-128;128], Y in [0;0] ]
+-- DEBUG: rand 0 16 ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:15.4-19: [ D in [0;16], R in [0;0], S in [0;0], X in [-128;128], Y in [0;0] ]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:16.4-10: [ D in [0;16], R in [0;0], S in [0;0], X in [-128;128], Y in [0;0] ]
+-- DEBUG: [-128;128] - [0;0] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:17.4-14: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [0;0] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:18.4-10: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-128;128] <= [-16;0] ~> [-128;0], [-16;0]
+-- DEBUG: [-128;128] ⊓ [-128;0] ~> [-128;0]
+-- DEBUG: is_bottom [-128;0] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [0;0] - [0;16] ~> [-16;0]
+-- DEBUG: is_bottom [-16;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.21-31: [ D in [0;16], R in [-128;0], S in [0;0], X in [-128;128], Y in [-16;0] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-128;128] > [-16;0] ~> [-15;128], [-16;0]
+-- DEBUG: [-128;128] ⊓ [-15;128] ~> [-15;128]
+-- DEBUG: is_bottom [-15;128] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-15;128] >= [0;16] ~> [0;128], [0;16]
+-- DEBUG: [-15;128] ⊓ [0;128] ~> [0;128]
+-- DEBUG: is_bottom [0;128] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [0;0] + [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.21-31: [ D in [0;16], R in [0;128], S in [0;0], X in [-128;128], Y in [0;16] ]
+-- DEBUG: [-15;128] < [0;16] ~> [-15;15], [0;16]
+-- DEBUG: [-15;128] ⊓ [-15;15] ~> [-15;15]
+-- DEBUG: is_bottom [-15;15] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [0;16] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [0;128] ⊔ [-15;15] ~> [-15;128]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.9-31: [ D in [0;16], R in [-15;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: [-16;0] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-128;0] ⊔ [-15;128] ~> [-128;128]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.4-20.31: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-128;128] > [128;128] ~> ⊥, ⊥
+-- DEBUG: [-128;128] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-128;128] < [-128;-128] ~> ⊥, ⊥
+-- DEBUG: [-128;128] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-128;128] <= [128;128] ~> [-128;128], [128;128]
+-- DEBUG: [-128;128] ⊓ [-128;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-128;128] >= [-128;-128] ~> [-128;128], [-128;-128]
+-- DEBUG: [-128;128] ⊓ [-128;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-128;128] ⊓ [-128;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:13.23-23.3: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] != [1;1] ~> [0;0], [1;1]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] == [1;1] ~> [1;1], [1;1]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand -128 128 ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:14.4-23: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 16 ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:15.4-19: [ D in [0;16], R in [-128;128], S in [0;0], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:16.4-10: [ D in [0;16], R in [-128;128], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: [-128;128] - [-128;128] ~> [-256;256]
+-- DEBUG: is_bottom [-256;256] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:17.4-14: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:18.4-10: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] <= [-16;0] ~> [-256;0], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-256;0] ~> [-256;0]
+-- DEBUG: is_bottom [-256;0] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] - [0;16] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.21-31: [ D in [0;16], R in [-256;0], S in [-128;128], X in [-128;128], Y in [-144;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] > [-16;0] ~> [-15;256], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-15;256] ~> [-15;256]
+-- DEBUG: is_bottom [-15;256] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-15;256] >= [0;16] ~> [0;256], [0;16]
+-- DEBUG: [-15;256] ⊓ [0;256] ~> [0;256]
+-- DEBUG: is_bottom [0;256] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] + [0;16] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.21-31: [ D in [0;16], R in [0;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-15;256] < [0;16] ~> [-15;15], [0;16]
+-- DEBUG: [-15;256] ⊓ [-15;15] ~> [-15;15]
+-- DEBUG: is_bottom [-15;15] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;144] ⊔ [-128;128] ~> [-128;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [0;256] ⊔ [-15;15] ~> [-15;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.9-31: [ D in [0;16], R in [-15;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-144;128] ⊔ [-128;144] ~> [-144;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;0] ⊔ [-15;256] ~> [-256;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.4-20.31: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-144;144] ]
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] > [128;128] ~> [129;144], [128;128]
+-- DEBUG: [-144;144] ⊓ [129;144] ~> [129;144]
+-- DEBUG: is_bottom [129;144] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] < [-128;-128] ~> [-144;-129], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-144;-129] ~> [-144;-129]
+-- DEBUG: is_bottom [-144;-129] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-144;-129] ⊔ [129;144] ~> [-144;144]
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] <= [128;128] ~> [-144;128], [128;128]
+-- DEBUG: [-144;144] ⊓ [-144;128] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] >= [-128;-128] ~> [-128;144], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-128;144] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-128;144] ⊓ [-144;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:13.23-23.3: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] != [1;1] ~> [0;0], [1;1]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] == [1;1] ~> [1;1], [1;1]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand -128 128 ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:14.4-23: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 16 ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:15.4-19: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:16.4-10: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: [-128;128] - [-128;128] ~> [-256;256]
+-- DEBUG: is_bottom [-256;256] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:17.4-14: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:18.4-10: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] <= [-16;0] ~> [-256;0], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-256;0] ~> [-256;0]
+-- DEBUG: is_bottom [-256;0] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] - [0;16] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.21-31: [ D in [0;16], R in [-256;0], S in [-128;128], X in [-128;128], Y in [-144;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] > [-16;0] ~> [-15;256], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-15;256] ~> [-15;256]
+-- DEBUG: is_bottom [-15;256] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-15;256] >= [0;16] ~> [0;256], [0;16]
+-- DEBUG: [-15;256] ⊓ [0;256] ~> [0;256]
+-- DEBUG: is_bottom [0;256] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] + [0;16] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.21-31: [ D in [0;16], R in [0;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-15;256] < [0;16] ~> [-15;15], [0;16]
+-- DEBUG: [-15;256] ⊓ [-15;15] ~> [-15;15]
+-- DEBUG: is_bottom [-15;15] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;144] ⊔ [-128;128] ~> [-128;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [0;256] ⊔ [-15;15] ~> [-15;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.9-31: [ D in [0;16], R in [-15;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-144;128] ⊔ [-128;144] ~> [-144;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;0] ⊔ [-15;256] ~> [-256;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.4-20.31: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-144;144] ]
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] > [128;128] ~> [129;144], [128;128]
+-- DEBUG: [-144;144] ⊓ [129;144] ~> [129;144]
+-- DEBUG: is_bottom [129;144] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] < [-128;-128] ~> [-144;-129], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-144;-129] ~> [-144;-129]
+-- DEBUG: is_bottom [-144;-129] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-144;-129] ⊔ [129;144] ~> [-144;144]
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] <= [128;128] ~> [-144;128], [128;128]
+-- DEBUG: [-144;144] ⊓ [-144;128] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] >= [-128;-128] ~> [-128;144], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-128;144] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-128;144] ⊓ [-144;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:13.23-23.3: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] != [1;1] ~> [0;0], [1;1]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] == [1;1] ~> [1;1], [1;1]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: rand -128 128 ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:14.4-23: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: rand 0 16 ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:15.4-19: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:16.4-10: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: [-128;128] - [-128;128] ~> [-256;256]
+-- DEBUG: is_bottom [-256;256] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:17.4-14: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:18.4-10: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] <= [-16;0] ~> [-256;0], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-256;0] ~> [-256;0]
+-- DEBUG: is_bottom [-256;0] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] - [0;16] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.21-31: [ D in [0;16], R in [-256;0], S in [-128;128], X in [-128;128], Y in [-144;128] ]
+-- DEBUG: - [0;16] ~> [-16;0]
+-- DEBUG: [-256;256] > [-16;0] ~> [-15;256], [-16;0]
+-- DEBUG: [-256;256] ⊓ [-15;256] ~> [-15;256]
+-- DEBUG: is_bottom [-15;256] ~> false
+-- DEBUG: - [0;16] (bwd from [-16;0]) ~> [0;16]
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-15;256] >= [0;16] ~> [0;256], [0;16]
+-- DEBUG: [-15;256] ⊓ [0;256] ~> [0;256]
+-- DEBUG: is_bottom [0;256] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;128] + [0;16] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.21-31: [ D in [0;16], R in [0;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-15;256] < [0;16] ~> [-15;15], [0;16]
+-- DEBUG: [-15;256] ⊓ [-15;15] ~> [-15;15]
+-- DEBUG: is_bottom [-15;15] ~> false
+-- DEBUG: [0;16] ⊓ [0;16] ~> [0;16]
+-- DEBUG: is_bottom [0;16] ~> false
+-- DEBUG: [-128;144] ⊔ [-128;128] ~> [-128;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [0;256] ⊔ [-15;15] ~> [-15;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:20.9-31: [ D in [0;16], R in [-15;256], S in [-128;128], X in [-128;128], Y in [-128;144] ]
+-- DEBUG: [-144;128] ⊔ [-128;144] ~> [-144;144]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;0] ⊔ [-15;256] ~> [-256;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:19.4-20.31: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-144;144] ]
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] > [128;128] ~> [129;144], [128;128]
+-- DEBUG: [-144;144] ⊓ [129;144] ~> [129;144]
+-- DEBUG: is_bottom [129;144] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] < [-128;-128] ~> [-144;-129], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-144;-129] ~> [-144;-129]
+-- DEBUG: is_bottom [-144;-129] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-144;-129] ⊔ [129;144] ~> [-144;144]
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: [-144;144] <= [128;128] ~> [-144;128], [128;128]
+-- DEBUG: [-144;144] ⊓ [-144;128] ~> [-144;128]
+-- DEBUG: is_bottom [-144;128] ~> false
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: const 128 ~> [128;128]
+-- DEBUG: - [128;128] ~> [-128;-128]
+-- DEBUG: [-144;144] >= [-128;-128] ~> [-128;144], [-128;-128]
+-- DEBUG: [-144;144] ⊓ [-128;144] ~> [-128;144]
+-- DEBUG: is_bottom [-128;144] ~> false
+-- DEBUG: - [128;128] (bwd from [-128;-128]) ~> [128;128]
+-- DEBUG: [128;128] ⊓ [128;128] ~> [128;128]
+-- DEBUG: is_bottom [128;128] ~> false
+-- DEBUG: [-128;144] ⊓ [-144;128] ~> [-128;128]
+-- DEBUG: is_bottom [-128;128] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:13.23-23.3: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;256] ⊔ [-256;256] ~> [-256;256]
+-- DEBUG: [0;16] ⊏ [0;16] ~> true
+-- DEBUG: [-256;256] ⊏ [-256;256] ~> true
+-- DEBUG: [-128;128] ⊏ [-128;128] ~> true
+-- DEBUG: [-128;128] ⊏ [-128;128] ~> true
+-- DEBUG: [-128;128] ⊏ [-128;128] ~> true
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;1] != [1;1] ~> [0;0], [1;1]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;256] ⊔ [-256;256] ~> [-256;256]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [-128;128] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [0;0] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;16] ~> [0;16]
+-- DEBUG: [-256;256] ⊔ [-128;128] ~> [-256;256]
+-- DEBUG: [-128;128] ⊔ [0;0] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [0;0] ~> [-128;128]
+-- DEBUG: [-128;128] ⊔ [0;0] ~> [-128;128]
+-- DEBUG: [0;16] ⊔ [0;0] ~> [0;16]
+-- DEBUG: [-256;256] ⊔ [0;0] ~> [-256;256]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:13.2-23.3: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:24.2-12: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:24.2-12: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+stat trace: tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:5.0-25.1: [ ]
+analysis ended

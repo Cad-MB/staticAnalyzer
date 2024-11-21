@@ -1,0 +1,5 @@
+stat trace: tests/01_concrete/0128_div.c:3.2-32: { [x=25;]; [x=26;]; [x=33;]; [x=34;]; [x=35;]; [x=50;]; [x=51;]; [x=52;]; }
+tests/01_concrete/0128_div.c:4.2-11: { [x=25;]; [x=26;]; [x=33;]; [x=34;]; [x=35;]; [x=50;]; [x=51;]; [x=52;]; }
+stat trace: tests/01_concrete/0128_div.c:4.2-11: { [x=25;]; [x=26;]; [x=33;]; [x=34;]; [x=35;]; [x=50;]; [x=51;]; [x=52;]; }
+stat trace: tests/01_concrete/0128_div.c:1.0-5.1: { []; }
+analysis ended

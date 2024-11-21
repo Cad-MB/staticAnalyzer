@@ -1,0 +1,12 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: rand -1 1 ~> ⊤ ∧ [-1;1]
+-- DEBUG: is_bottom ⊤ ∧ [-1;1] ~> false
+stat trace: tests/20_reduced/0124_mul_rand.c:3.2-17: [ x in ⊤ ∧ [-1;1] ]
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: ⊤ ∧ [-1;1] * even ∧ [0;0] ~> even ∧ [0;0]
+-- DEBUG: is_bottom even ∧ [0;0] ~> false
+stat trace: tests/20_reduced/0124_mul_rand.c:4.2-12: [ x in even ∧ [0;0] ]
+tests/20_reduced/0124_mul_rand.c:5.2-11: [ x in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0124_mul_rand.c:5.2-11: [ x in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0124_mul_rand.c:1.0-6.1: [ ]
+analysis ended

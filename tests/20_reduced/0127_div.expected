@@ -1,0 +1,2 @@
+tests/20_reduced/0127_div.c:4.2-11: [ x in odd ∧ [5;5] ]
+analysis ended

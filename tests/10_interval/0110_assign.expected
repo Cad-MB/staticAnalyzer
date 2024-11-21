@@ -1,0 +1,2 @@
+tests/10_interval/0110_assign.c:7.2-11: [ x in [11;11] ]
+analysis ended

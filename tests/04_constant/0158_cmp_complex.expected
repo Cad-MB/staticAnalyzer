@@ -1,0 +1,2 @@
+tests/04_constant/0158_cmp_complex.c:8.20-29: [ z in {3} ]
+analysis ended

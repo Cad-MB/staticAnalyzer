@@ -1,0 +1,2 @@
+tests/10_interval/0135_else_both.c:5.2-11: [ x in [5;10] ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/10_interval/0149_cmp_ne.c:6.14-25: [ x in [10;13], y in [10;13] ]
+analysis ended

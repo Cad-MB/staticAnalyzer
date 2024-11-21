@@ -1,0 +1,6 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+tests/10_interval/0102_decl.c:4.2-12: [ x in [0;0], y in [0;0] ]
+stat trace: tests/10_interval/0102_decl.c:4.2-12: [ x in [0;0], y in [0;0] ]
+stat trace: tests/10_interval/0102_decl.c:1.0-5.1: [ ]
+analysis ended

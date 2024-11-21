@@ -1,0 +1,4 @@
+tests/01_concrete/0102_decl.c:4.2-12: { [x=0;y=0;]; }
+stat trace: tests/01_concrete/0102_decl.c:4.2-12: { [x=0;y=0;]; }
+stat trace: tests/01_concrete/0102_decl.c:1.0-5.1: { []; }
+analysis ended

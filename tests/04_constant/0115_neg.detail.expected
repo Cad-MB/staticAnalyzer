@@ -1,0 +1,9 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 9 ~> {9}
+-- DEBUG: - {9} ~> {-9}
+-- DEBUG: is_bottom {-9} ~> false
+stat trace: tests/04_constant/0115_neg.c:3.2-9: [ x in {-9} ]
+tests/04_constant/0115_neg.c:4.2-11: [ x in {-9} ]
+stat trace: tests/04_constant/0115_neg.c:4.2-11: [ x in {-9} ]
+stat trace: tests/04_constant/0115_neg.c:1.0-5.1: [ ]
+analysis ended

@@ -1,0 +1,5 @@
+stat trace: tests/01_concrete/0127_div.c:3.2-13: { [x=5;]; }
+tests/01_concrete/0127_div.c:4.2-11: { [x=5;]; }
+stat trace: tests/01_concrete/0127_div.c:4.2-11: { [x=5;]; }
+stat trace: tests/01_concrete/0127_div.c:1.0-5.1: { []; }
+analysis ended

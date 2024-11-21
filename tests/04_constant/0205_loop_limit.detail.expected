@@ -1,0 +1,68 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0205_loop_limit.c:3.2-8: [ x in {0} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: {0} < {10} ~> {0}, {10}
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {0} + {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0205_loop_limit.c:5.16-26: [ x in {1} ]
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: {0} >= {10} ~> ⊥, ⊥
+-- DEBUG: {0} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/04_constant/0205_loop_limit.c:5.4-26: [ x in {1} ]
+stat trace: tests/04_constant/0205_loop_limit.c:4.23-6.3: [ x in {1} ]
+-- DEBUG: {0} ⊔ {1} ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ < {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0205_loop_limit.c:5.16-26: [ x in ⊤ ]
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ >= {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+stat trace: tests/04_constant/0205_loop_limit.c:5.4-26: [ x in ⊤ ]
+stat trace: tests/04_constant/0205_loop_limit.c:4.23-6.3: [ x in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0205_loop_limit.c:4.2-6.3: [ x in ⊤ ]
+tests/04_constant/0205_loop_limit.c:7.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0205_loop_limit.c:7.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0205_loop_limit.c:1.0-8.1: [ ]
+analysis ended

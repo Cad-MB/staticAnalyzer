@@ -1,0 +1,2 @@
+tests/12_interval_loop/0209_loop_reduced.c:6.2-11: [ x in [11;12] ]
+analysis ended

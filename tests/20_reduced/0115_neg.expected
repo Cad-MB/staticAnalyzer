@@ -1,0 +1,2 @@
+tests/20_reduced/0115_neg.c:4.2-11: [ x in odd ∧ [-9;-9] ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/20_reduced/0125_assign.c:8.2-11: [ z in ⊤ ∧ [5;13] ]
+analysis ended

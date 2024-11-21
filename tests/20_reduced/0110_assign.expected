@@ -1,0 +1,2 @@
+tests/20_reduced/0110_assign.c:7.2-11: [ x in odd ∧ [11;11] ]
+analysis ended

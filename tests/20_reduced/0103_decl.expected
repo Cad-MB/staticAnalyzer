@@ -1,0 +1,2 @@
+tests/20_reduced/0103_decl.c:6.2-12: [ y in even ∧ [0;0] ]
+analysis ended

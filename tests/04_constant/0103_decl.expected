@@ -1,0 +1,2 @@
+tests/04_constant/0103_decl.c:6.2-12: [ y in {0} ]
+analysis ended

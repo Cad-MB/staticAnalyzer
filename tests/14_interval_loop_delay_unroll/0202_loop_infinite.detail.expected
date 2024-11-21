@@ -1,0 +1,61 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:3.2-8: [ x in [0;0] ]
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] < [10;10] ~> [0;0], [10;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [10;10] ⊓ [10;10] ~> [10;10]
+-- DEBUG: is_bottom [10;10] ~> false
+tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:4.17-6.3: [ x in [0;0] ]
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] >= [10;10] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] < [10;10] ~> [0;0], [10;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [10;10] ⊓ [10;10] ~> [10;10]
+-- DEBUG: is_bottom [10;10] ~> false
+tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:4.17-6.3: [ x in [0;0] ]
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] >= [10;10] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] < [10;10] ~> [0;0], [10;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [10;10] ⊓ [10;10] ~> [10;10]
+-- DEBUG: is_bottom [10;10] ~> false
+tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:4.17-6.3: [ x in [0;0] ]
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] >= [10;10] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] < [10;10] ~> [0;0], [10;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [10;10] ⊓ [10;10] ~> [10;10]
+-- DEBUG: is_bottom [10;10] ~> false
+tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:5.4-13: [ x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:4.17-6.3: [ x in [0;0] ]
+-- DEBUG: [0;0] ⊔ [0;0] ~> [0;0]
+-- DEBUG: [0;0] ⊏ [0;0] ~> true
+-- DEBUG: const 10 ~> [10;10]
+-- DEBUG: [0;0] >= [10;10] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:4.2-6.3: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0202_loop_infinite.c:1.0-7.1: ⊥
+analysis ended

@@ -1,0 +1,37 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+stat trace: tests/04_constant/0158_cmp_complex.c:5.2-8: [ x in {2}, y in {0}, z in {0} ]
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+stat trace: tests/04_constant/0158_cmp_complex.c:6.2-8: [ x in {2}, y in {5}, z in {0} ]
+-- DEBUG: rand 0 10 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0158_cmp_complex.c:7.2-17: [ x in {2}, y in {5}, z in ⊤ ]
+-- DEBUG: {2} + ⊤ ~> ⊤
+-- DEBUG: {5} == ⊤ ~> {5}, {5}
+-- DEBUG: {5} ⊓ {5} ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+-- DEBUG: {2} + ⊤ (bwd from {5}) ~> {2}, {3}
+-- DEBUG: {2} ⊓ {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+-- DEBUG: ⊤ ⊓ {3} ~> {3}
+-- DEBUG: is_bottom {3} ~> false
+tests/04_constant/0158_cmp_complex.c:8.20-29: [ z in {3} ]
+stat trace: tests/04_constant/0158_cmp_complex.c:8.20-29: [ x in {2}, y in {5}, z in {3} ]
+stat trace: tests/04_constant/0158_cmp_complex.c:8.18-31: [ x in {2}, y in {5}, z in {3} ]
+-- DEBUG: {2} + ⊤ ~> ⊤
+-- DEBUG: {5} != ⊤ ~> {5}, ⊤
+-- DEBUG: {5} ⊓ {5} ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+-- DEBUG: {2} + ⊤ (bwd from ⊤) ~> {2}, ⊤
+-- DEBUG: {2} ⊓ {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {3} ⊔ ⊤ ~> ⊤
+stat trace: tests/04_constant/0158_cmp_complex.c:8.2-31: [ x in {2}, y in {5}, z in ⊤ ]
+stat trace: tests/04_constant/0158_cmp_complex.c:1.0-9.1: [ ]
+analysis ended

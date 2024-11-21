@@ -1,0 +1,5 @@
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/14_interval_loop_delay_unroll/0312_rate_limiter.c:24.2-12: [ D in [0;16], R in [-256;256], S in [-128;128], X in [-128;128], Y in [-128;128] ]
+analysis ended

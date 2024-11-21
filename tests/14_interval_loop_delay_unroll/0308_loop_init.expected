@@ -1,0 +1,2 @@
+tests/14_interval_loop_delay_unroll/0308_loop_init.c:15.2-12: [ init in [0;1], x in [0;+∞] ]
+analysis ended

@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0137_if_both.c:3.2-8: { [x=1;]; }
+stat trace: tests/01_concrete/0137_if_both.c:4.20-26: { [x=9;]; }
+stat trace: tests/01_concrete/0137_if_both.c:4.2-26: { [x=1;]; [x=9;]; }
+tests/01_concrete/0137_if_both.c:5.2-11: { [x=1;]; [x=9;]; }
+stat trace: tests/01_concrete/0137_if_both.c:5.2-11: { [x=1;]; [x=9;]; }
+stat trace: tests/01_concrete/0137_if_both.c:1.0-6.1: { []; }
+analysis ended

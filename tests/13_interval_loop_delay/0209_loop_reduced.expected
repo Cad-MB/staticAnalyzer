@@ -1,0 +1,2 @@
+tests/13_interval_loop_delay/0209_loop_reduced.c:6.2-11: [ x in [11;12] ]
+analysis ended

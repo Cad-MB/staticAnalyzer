@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0148_cmp_eq.c:4.2-18: { [x=15;y=0;]; [x=16;y=0;]; }
+stat trace: tests/01_concrete/0148_cmp_eq.c:5.2-18: { [x=15;y=16;]; [x=15;y=17;]; [x=16;y=16;]; [x=16;y=17;]; }
+tests/01_concrete/0148_cmp_eq.c:6.14-25: { [x=16;y=16;]; }
+stat trace: tests/01_concrete/0148_cmp_eq.c:6.14-25: { [x=16;y=16;]; }
+stat trace: tests/01_concrete/0148_cmp_eq.c:6.2-25: { [x=15;y=16;]; [x=15;y=17;]; [x=16;y=16;]; [x=16;y=17;]; }
+stat trace: tests/01_concrete/0148_cmp_eq.c:1.0-7.1: { []; }
+analysis ended

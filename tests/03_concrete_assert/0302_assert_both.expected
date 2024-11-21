@@ -1,0 +1,4 @@
+tests/03_concrete_assert/0302_assert_both.c:4.2-17: ERROR: assertion failure
+tests/03_concrete_assert/0302_assert_both.c:5.2-16: ERROR: assertion failure
+tests/03_concrete_assert/0302_assert_both.c:6.2-11: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+analysis ended

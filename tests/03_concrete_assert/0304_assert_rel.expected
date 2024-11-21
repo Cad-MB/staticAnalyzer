@@ -1,0 +1,2 @@
+tests/03_concrete_assert/0304_assert_rel.c:7.2-13: { [x=1;y=1;]; [x=3;y=3;]; }
+analysis ended

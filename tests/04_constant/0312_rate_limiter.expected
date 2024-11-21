@@ -1,0 +1,5 @@
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+tests/04_constant/0312_rate_limiter.c:24.2-12: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+analysis ended

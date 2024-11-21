@@ -1,0 +1,2 @@
+tests/02_concrete_loop/0209_loop_reduced.c:6.2-11: { [x=12;]; }
+analysis ended

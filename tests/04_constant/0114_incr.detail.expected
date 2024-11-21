@@ -1,0 +1,14 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 12 ~> {12}
+-- DEBUG: is_bottom {12} ~> false
+stat trace: tests/04_constant/0114_incr.c:3.2-9: [ x in {12} ]
+tests/04_constant/0114_incr.c:4.2-11: [ x in {12} ]
+stat trace: tests/04_constant/0114_incr.c:4.2-11: [ x in {12} ]
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {12} + {2} ~> {14}
+-- DEBUG: is_bottom {14} ~> false
+stat trace: tests/04_constant/0114_incr.c:5.2-12: [ x in {14} ]
+tests/04_constant/0114_incr.c:6.2-11: [ x in {14} ]
+stat trace: tests/04_constant/0114_incr.c:6.2-11: [ x in {14} ]
+stat trace: tests/04_constant/0114_incr.c:1.0-7.1: [ ]
+analysis ended

@@ -1,0 +1,9 @@
+stat trace: tests/01_concrete/0158_cmp_complex.c:5.2-8: { [x=2;y=0;z=0;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:6.2-8: { [x=2;y=5;z=0;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:7.2-17: { [x=2;y=5;z=0;]; [x=2;y=5;z=1;]; [x=2;y=5;z=2;]; [x=2;y=5;z=3;]; [x=2;y=5;z=4;]; [x=2;y=5;z=5;]; [x=2;y=5;z=6;]; [x=2;y=5;z=7;]; [x=2;y=5;z=8;]; [x=2;y=5;z=9;]; [x=2;y=5;z=10;]; }
+tests/01_concrete/0158_cmp_complex.c:8.20-29: { [z=3;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:8.20-29: { [x=2;y=5;z=3;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:8.18-31: { [x=2;y=5;z=3;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:8.2-31: { [x=2;y=5;z=0;]; [x=2;y=5;z=1;]; [x=2;y=5;z=2;]; [x=2;y=5;z=3;]; [x=2;y=5;z=4;]; [x=2;y=5;z=5;]; [x=2;y=5;z=6;]; [x=2;y=5;z=7;]; [x=2;y=5;z=8;]; [x=2;y=5;z=9;]; [x=2;y=5;z=10;]; }
+stat trace: tests/01_concrete/0158_cmp_complex.c:1.0-9.1: { []; }
+analysis ended

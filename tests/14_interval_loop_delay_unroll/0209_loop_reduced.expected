@@ -1,0 +1,2 @@
+tests/14_interval_loop_delay_unroll/0209_loop_reduced.c:6.2-11: [ x in [11;12] ]
+analysis ended

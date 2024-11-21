@@ -1,0 +1,9 @@
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [0;0] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-1;-1] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-2;-2] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-3;-3] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-4;-3] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-5;-3] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-6;-3] ]
+tests/14_interval_loop_delay_unroll/0203_loop_infinite.c:5.4-13: [ x in [-∞;-3] ]
+analysis ended

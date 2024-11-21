@@ -1,0 +1,6 @@
+stat trace: tests/03_concrete_assert/0305_assert_true.c:3.2-8: { [x=2;]; }
+stat trace: tests/03_concrete_assert/0305_assert_true.c:4.2-15: { [x=2;]; }
+tests/03_concrete_assert/0305_assert_true.c:5.2-11: { [x=2;]; }
+stat trace: tests/03_concrete_assert/0305_assert_true.c:5.2-11: { [x=2;]; }
+stat trace: tests/03_concrete_assert/0305_assert_true.c:1.0-6.1: { []; }
+analysis ended

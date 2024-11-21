@@ -1,0 +1,48 @@
+stat trace: tests/02_concrete_loop/0201_loop.c:3.2-8: { [x=0;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; [x=10;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; [x=10;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:6.4-14: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; [x=10;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.17-7.3: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; [x=10;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:4.2-7.3: { [x=10;]; }
+stat trace: tests/02_concrete_loop/0201_loop.c:1.0-8.1: { []; }
+analysis ended

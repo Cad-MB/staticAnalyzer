@@ -1,0 +1,6 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 0 ~> even ∧ [0;0]
+tests/20_reduced/0102_decl.c:4.2-12: [ x in even ∧ [0;0], y in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0102_decl.c:4.2-12: [ x in even ∧ [0;0], y in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0102_decl.c:1.0-5.1: [ ]
+analysis ended

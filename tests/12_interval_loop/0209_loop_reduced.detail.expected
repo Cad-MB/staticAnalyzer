@@ -1,0 +1,39 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 11 ~> [11;11]
+-- DEBUG: [0;0] < [11;11] ~> [0;0], [11;11]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [11;11] ⊓ [11;11] ~> [11;11]
+-- DEBUG: is_bottom [11;11] ~> false
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: [0;0] + [2;2] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:4.4-14: [ x in [2;2] ]
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:3.15-5.3: [ x in [2;2] ]
+-- DEBUG: [0;0] ⊔ [2;2] ~> [0;2]
+-- DEBUG: [0;2] ⊏ [0;0] ~> false
+-- DEBUG: [0;0] ▿ [0;2] ~> [0;+∞]
+-- DEBUG: const 11 ~> [11;11]
+-- DEBUG: [0;+∞] < [11;11] ~> [0;10], [11;11]
+-- DEBUG: [0;+∞] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [11;11] ⊓ [11;11] ~> [11;11]
+-- DEBUG: is_bottom [11;11] ~> false
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: [0;10] + [2;2] ~> [2;12]
+-- DEBUG: is_bottom [2;12] ~> false
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:4.4-14: [ x in [2;12] ]
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:3.15-5.3: [ x in [2;12] ]
+-- DEBUG: [0;0] ⊔ [2;12] ~> [0;12]
+-- DEBUG: [0;12] ⊏ [0;+∞] ~> true
+-- DEBUG: const 11 ~> [11;11]
+-- DEBUG: [0;12] >= [11;11] ~> [11;12], [11;11]
+-- DEBUG: [0;12] ⊓ [11;12] ~> [11;12]
+-- DEBUG: is_bottom [11;12] ~> false
+-- DEBUG: [11;11] ⊓ [11;11] ~> [11;11]
+-- DEBUG: is_bottom [11;11] ~> false
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:3.2-5.3: [ x in [11;12] ]
+tests/12_interval_loop/0209_loop_reduced.c:6.2-11: [ x in [11;12] ]
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:6.2-11: [ x in [11;12] ]
+stat trace: tests/12_interval_loop/0209_loop_reduced.c:1.0-7.1: [ ]
+analysis ended

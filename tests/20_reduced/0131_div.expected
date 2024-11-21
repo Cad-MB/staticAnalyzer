@@ -1,0 +1,2 @@
+tests/20_reduced/0131_div.c:4.2-11: [ x in ⊤ ∧ [-12;12] ]
+analysis ended

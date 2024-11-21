@@ -1,0 +1,7 @@
+stat trace: tests/02_concrete_loop/0202_loop_infinite.c:3.2-8: { [x=0;]; }
+tests/02_concrete_loop/0202_loop_infinite.c:5.4-13: { [x=0;]; }
+stat trace: tests/02_concrete_loop/0202_loop_infinite.c:5.4-13: { [x=0;]; }
+stat trace: tests/02_concrete_loop/0202_loop_infinite.c:4.17-6.3: { [x=0;]; }
+stat trace: tests/02_concrete_loop/0202_loop_infinite.c:4.2-6.3: { }
+stat trace: tests/02_concrete_loop/0202_loop_infinite.c:1.0-7.1: { }
+analysis ended

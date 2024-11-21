@@ -1,0 +1,17 @@
+image: tas
+
+stages:
+- build
+- test
+
+build_job:
+  stage: build
+  script: "eval `opam config env` && dune build"
+
+test_job:
+  stage: test
+  script:  "eval `opam config env` && ./scripts-ci/run.sh"
+  artifacts:
+    when: always
+    paths:
+    - result.html

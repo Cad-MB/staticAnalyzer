@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0132_if_true.c:3.2-8: { [x=0;]; }
+stat trace: tests/01_concrete/0132_if_true.c:4.14-20: { [x=1;]; }
+stat trace: tests/01_concrete/0132_if_true.c:4.2-20: { [x=1;]; }
+tests/01_concrete/0132_if_true.c:5.2-11: { [x=1;]; }
+stat trace: tests/01_concrete/0132_if_true.c:5.2-11: { [x=1;]; }
+stat trace: tests/01_concrete/0132_if_true.c:1.0-6.1: { []; }
+analysis ended

@@ -1,0 +1,139 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:4.2-8: [ i in {0}, j in {0} ]
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: {0} < {10} ~> {0}, {10}
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:6.4-10: [ i in {0}, j in {0} ]
+-- DEBUG: {0} < {0} ~> ⊥, ⊥
+-- DEBUG: {0} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/04_constant/0208_loop_nested.c:8.6-16: ⊥
+stat trace: tests/04_constant/0208_loop_nested.c:7.18-9.5: ⊥
+-- DEBUG: {0} >= {0} ~> {0}, {0}
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:7.4-9.5: [ i in {0}, j in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {0} + {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:10.4-14: [ i in {1}, j in {0} ]
+stat trace: tests/04_constant/0208_loop_nested.c:5.17-11.3: [ i in {1}, j in {0} ]
+-- DEBUG: {0} ⊔ {1} ~> ⊤
+-- DEBUG: {0} ⊔ {0} ~> {0}
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ < {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:6.4-10: [ i in ⊤, j in {0} ]
+-- DEBUG: {0} < ⊤ ~> {0}, ⊤
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {0} + {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:8.6-16: [ i in ⊤, j in {1} ]
+stat trace: tests/04_constant/0208_loop_nested.c:7.18-9.5: [ i in ⊤, j in {1} ]
+-- DEBUG: {0} ⊔ {1} ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:8.6-16: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:7.18-9.5: [ i in ⊤, j in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:7.4-9.5: [ i in ⊤, j in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:10.4-14: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:5.17-11.3: [ i in ⊤, j in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ < {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:6.4-10: [ i in ⊤, j in {0} ]
+-- DEBUG: {0} < ⊤ ~> {0}, ⊤
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {0} + {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:8.6-16: [ i in ⊤, j in {1} ]
+stat trace: tests/04_constant/0208_loop_nested.c:7.18-9.5: [ i in ⊤, j in {1} ]
+-- DEBUG: {0} ⊔ {1} ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:8.6-16: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:7.18-9.5: [ i in ⊤, j in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:7.4-9.5: [ i in ⊤, j in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:10.4-14: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:5.17-11.3: [ i in ⊤, j in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ >= {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+stat trace: tests/04_constant/0208_loop_nested.c:5.2-11.3: [ i in ⊤, j in ⊤ ]
+tests/04_constant/0208_loop_nested.c:12.2-12: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:12.2-12: [ i in ⊤, j in ⊤ ]
+stat trace: tests/04_constant/0208_loop_nested.c:1.0-13.1: [ ]
+analysis ended

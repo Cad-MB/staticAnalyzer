@@ -1,0 +1,27 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+stat trace: tests/10_interval/0137_if_both.c:3.2-8: [ x in [1;1] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 9 ~> [9;9]
+-- DEBUG: is_bottom [9;9] ~> false
+stat trace: tests/10_interval/0137_if_both.c:4.20-26: [ x in [9;9] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [9;9] ⊔ [1;1] ~> [1;9]
+stat trace: tests/10_interval/0137_if_both.c:4.2-26: [ x in [1;9] ]
+tests/10_interval/0137_if_both.c:5.2-11: [ x in [1;9] ]
+stat trace: tests/10_interval/0137_if_both.c:5.2-11: [ x in [1;9] ]
+stat trace: tests/10_interval/0137_if_both.c:1.0-6.1: [ ]
+analysis ended

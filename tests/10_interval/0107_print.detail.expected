@@ -1,0 +1,20 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 12 ~> [12;12]
+-- DEBUG: is_bottom [12;12] ~> false
+stat trace: tests/10_interval/0107_print.c:4.2-9: [ x in [12;12], y in [0;0] ]
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+stat trace: tests/10_interval/0107_print.c:5.2-9: [ x in [12;12], y in [15;15] ]
+tests/10_interval/0107_print.c:6.2-13: [ x in [12;12], y in [15;15] ]
+stat trace: tests/10_interval/0107_print.c:6.2-13: [ x in [12;12], y in [15;15] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/10_interval/0107_print.c:7.2-8: [ x in [0;0], y in [15;15] ]
+-- DEBUG: const 9 ~> [9;9]
+-- DEBUG: is_bottom [9;9] ~> false
+stat trace: tests/10_interval/0107_print.c:8.2-8: [ x in [0;0], y in [9;9] ]
+tests/10_interval/0107_print.c:9.2-13: [ x in [0;0], y in [9;9] ]
+stat trace: tests/10_interval/0107_print.c:9.2-13: [ x in [0;0], y in [9;9] ]
+stat trace: tests/10_interval/0107_print.c:1.0-10.1: [ ]
+analysis ended

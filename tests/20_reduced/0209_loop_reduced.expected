@@ -1,0 +1,2 @@
+tests/20_reduced/0209_loop_reduced.c:6.2-11: [ x in even ∧ [12;12] ]
+analysis ended

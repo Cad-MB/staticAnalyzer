@@ -1,0 +1,2 @@
+tests/02_concrete_loop/0202_loop_infinite.c:5.4-13: { [x=0;]; }
+analysis ended

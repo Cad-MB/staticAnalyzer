@@ -1,0 +1,2 @@
+tests/10_interval/0102_decl.c:4.2-12: [ x in [0;0], y in [0;0] ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/13_interval_loop_delay/0206_loop_limit.c:9.2-11: [ x in [0;+∞] ]
+analysis ended

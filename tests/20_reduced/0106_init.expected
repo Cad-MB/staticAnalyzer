@@ -1,0 +1,2 @@
+tests/20_reduced/0106_init.c:8.2-12: [ y in odd ∧ [13;13] ]
+analysis ended

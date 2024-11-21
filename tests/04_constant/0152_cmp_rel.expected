@@ -1,0 +1,2 @@
+tests/04_constant/0152_cmp_rel.c:6.17-26: [ y in ⊤ ]
+analysis ended

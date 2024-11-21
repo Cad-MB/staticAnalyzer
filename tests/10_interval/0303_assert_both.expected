@@ -1,0 +1,3 @@
+tests/10_interval/0303_assert_both.c:4.2-16: ERROR: assertion failure
+tests/10_interval/0303_assert_both.c:6.2-11: [ x in [1;5] ]
+analysis ended

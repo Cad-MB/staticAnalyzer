@@ -1,0 +1,43 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0203_loop_infinite.c:3.2-8: [ x in {0} ]
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: {0} < {10} ~> {0}, {10}
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+tests/04_constant/0203_loop_infinite.c:5.4-13: [ x in {0} ]
+stat trace: tests/04_constant/0203_loop_infinite.c:5.4-13: [ x in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {0} - {1} ~> {-1}
+-- DEBUG: is_bottom {-1} ~> false
+stat trace: tests/04_constant/0203_loop_infinite.c:6.4-14: [ x in {-1} ]
+stat trace: tests/04_constant/0203_loop_infinite.c:4.17-7.3: [ x in {-1} ]
+-- DEBUG: {0} ⊔ {-1} ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ < {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+tests/04_constant/0203_loop_infinite.c:5.4-13: [ x in ⊤ ]
+stat trace: tests/04_constant/0203_loop_infinite.c:5.4-13: [ x in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0203_loop_infinite.c:6.4-14: [ x in ⊤ ]
+stat trace: tests/04_constant/0203_loop_infinite.c:4.17-7.3: [ x in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: ⊤ >= {10} ~> ⊤, {10}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {10} ⊓ {10} ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+stat trace: tests/04_constant/0203_loop_infinite.c:4.2-7.3: [ x in ⊤ ]
+stat trace: tests/04_constant/0203_loop_infinite.c:1.0-8.1: [ ]
+analysis ended

@@ -1,0 +1,371 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:4.2-11: [ init in [0;0], x in [0;0] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;0] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: [ init in [0;0], x in [0;0] ]
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: [ init in [1;1], x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: [ init in [1;1], x in [0;0] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;0] != [0;0] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [0;0] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;0] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [0;0] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;0] >= [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [0;0] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [0;0] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;0] + [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [1;1] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [1;1] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [1;1] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] >= [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [1;1] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [1;1] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [1;1] + [1;1] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [2;2] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [2;2] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [2;2] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [2;2] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [2;2] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [2;2] >= [0;0] ~> [2;2], [0;0]
+-- DEBUG: [2;2] ⊓ [2;2] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [2;2] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [2;2] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [2;2] + [1;1] ~> [3;3]
+-- DEBUG: is_bottom [3;3] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [3;3] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [3;3] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [3;3] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;3] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [3;3] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;3] >= [0;0] ~> [3;3], [0;0]
+-- DEBUG: [3;3] ⊓ [3;3] ~> [3;3]
+-- DEBUG: is_bottom [3;3] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [3;3] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [3;3] ]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;2] ⊔ [3;3] ~> [2;3]
+-- DEBUG: [1;1] ⊏ [1;1] ~> true
+-- DEBUG: [2;3] ⊏ [2;2] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [2;3] + [1;1] ~> [3;4]
+-- DEBUG: is_bottom [3;4] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [3;4] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [3;4] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [3;4] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;4] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [3;4] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;4] >= [0;0] ~> [3;4], [0;0]
+-- DEBUG: [3;4] ⊓ [3;4] ~> [3;4]
+-- DEBUG: is_bottom [3;4] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [3;4] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [3;4] ]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;2] ⊔ [3;4] ~> [2;4]
+-- DEBUG: [1;1] ⊏ [1;1] ~> true
+-- DEBUG: [2;4] ⊏ [2;3] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [2;4] + [1;1] ~> [3;5]
+-- DEBUG: is_bottom [3;5] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [3;5] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [3;5] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [3;5] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;5] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [3;5] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;5] >= [0;0] ~> [3;5], [0;0]
+-- DEBUG: [3;5] ⊓ [3;5] ~> [3;5]
+-- DEBUG: is_bottom [3;5] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [3;5] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [3;5] ]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;2] ⊔ [3;5] ~> [2;5]
+-- DEBUG: [1;1] ⊏ [1;1] ~> true
+-- DEBUG: [2;5] ⊏ [2;4] ~> false
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [2;5] + [1;1] ~> [3;6]
+-- DEBUG: is_bottom [3;6] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [3;6] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [3;6] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [3;6] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;6] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [3;6] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;6] >= [0;0] ~> [3;6], [0;0]
+-- DEBUG: [3;6] ⊓ [3;6] ~> [3;6]
+-- DEBUG: is_bottom [3;6] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [3;6] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [3;6] ]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;2] ⊔ [3;6] ~> [2;6]
+-- DEBUG: [1;1] ⊏ [1;1] ~> true
+-- DEBUG: [2;6] ⊏ [2;5] ~> false
+-- DEBUG: [1;1] ▿ [1;1] ~> [1;1]
+-- DEBUG: [2;5] ▿ [2;6] ~> [2;+∞]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] == [0;0] ~> ⊥, ⊥
+-- DEBUG: [1;1] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:7.6-12: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:8.6-15: ⊥
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.19-9.5: ⊥
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [1;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [1;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [2;+∞] + [1;1] ~> [3;+∞]
+-- DEBUG: is_bottom [3;+∞] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:11.6-16: [ init in [1;1], x in [3;+∞] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:10.9-12.5: [ init in [1;1], x in [3;+∞] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:6.4-12.5: [ init in [1;1], x in [3;+∞] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;+∞] < [0;0] ~> ⊥, ⊥
+-- DEBUG: [3;+∞] ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [3;+∞] >= [0;0] ~> [3;+∞], [0;0]
+-- DEBUG: [3;+∞] ⊓ [3;+∞] ~> [3;+∞]
+-- DEBUG: is_bottom [3;+∞] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:13.4-19: [ init in [1;1], x in [3;+∞] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.23-14.3: [ init in [1;1], x in [3;+∞] ]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;2] ⊔ [3;+∞] ~> [2;+∞]
+-- DEBUG: [1;1] ⊏ [1;1] ~> true
+-- DEBUG: [2;+∞] ⊏ [2;+∞] ~> true
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [2;+∞] ⊔ [1;1] ~> [1;+∞]
+-- DEBUG: [1;1] ⊔ [1;1] ~> [1;1]
+-- DEBUG: [1;+∞] ⊔ [0;0] ~> [0;+∞]
+-- DEBUG: [1;1] ⊔ [0;0] ~> [0;1]
+-- DEBUG: [0;+∞] ⊔ [0;0] ~> [0;+∞]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:5.2-14.3: [ init in [0;1], x in [0;+∞] ]
+tests/14_interval_loop_delay_unroll/0308_loop_init.c:15.2-12: [ init in [0;1], x in [0;+∞] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:15.2-12: [ init in [0;1], x in [0;+∞] ]
+stat trace: tests/14_interval_loop_delay_unroll/0308_loop_init.c:1.0-16.1: [ ]
+analysis ended

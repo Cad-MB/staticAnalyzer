@@ -1,0 +1,2 @@
+tests/04_constant/0104_init.c:4.2-12: [ x in {2} ]
+analysis ended

@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand 1 2 ~> [1;2]
+-- DEBUG: rand 10 12 ~> [10;12]
+-- DEBUG: [1;2] * [10;12] ~> [10;24]
+-- DEBUG: is_bottom [10;24] ~> false
+stat trace: tests/10_interval/0121_mul_rand.c:3.2-30: [ x in [10;24] ]
+tests/10_interval/0121_mul_rand.c:4.2-11: [ x in [10;24] ]
+stat trace: tests/10_interval/0121_mul_rand.c:4.2-11: [ x in [10;24] ]
+stat trace: tests/10_interval/0121_mul_rand.c:1.0-5.1: [ ]
+analysis ended

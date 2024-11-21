@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 12 ~> [12;12]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [12;12] / [0;0] ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/10_interval/0130_div.c:3.2-13: ⊥
+tests/10_interval/0130_div.c:4.2-11: ⊥
+stat trace: tests/10_interval/0130_div.c:4.2-11: ⊥
+stat trace: tests/10_interval/0130_div.c:1.0-5.1: ⊥
+analysis ended

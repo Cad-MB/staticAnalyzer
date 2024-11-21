@@ -1,0 +1,2 @@
+tests/01_concrete/0103_decl.c:6.2-12: { [y=0;]; }
+analysis ended

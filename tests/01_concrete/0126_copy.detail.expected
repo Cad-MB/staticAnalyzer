@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0126_copy.c:3.2-9: { [x=12;]; }
+stat trace: tests/01_concrete/0126_copy.c:6.4-10: { [x=12;y=12;]; }
+tests/01_concrete/0126_copy.c:7.4-13: { [y=12;]; }
+stat trace: tests/01_concrete/0126_copy.c:7.4-13: { [x=12;y=12;]; }
+stat trace: tests/01_concrete/0126_copy.c:4.2-8.3: { [x=12;]; }
+stat trace: tests/01_concrete/0126_copy.c:1.0-9.1: { []; }
+analysis ended

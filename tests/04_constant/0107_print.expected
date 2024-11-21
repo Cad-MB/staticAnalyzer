@@ -1,0 +1,3 @@
+tests/04_constant/0107_print.c:6.2-13: [ x in {12}, y in {15} ]
+tests/04_constant/0107_print.c:9.2-13: [ x in {0}, y in {9} ]
+analysis ended

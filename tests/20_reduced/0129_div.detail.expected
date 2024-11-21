@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: rand -5 5 ~> ⊤ ∧ [-5;5]
+-- DEBUG: rand 2 4 ~> ⊤ ∧ [2;4]
+-- DEBUG: ⊤ ∧ [-5;5] / ⊤ ∧ [2;4] ~> ⊤ ∧ [-2;2]
+-- DEBUG: is_bottom ⊤ ∧ [-2;2] ~> false
+stat trace: tests/20_reduced/0129_div.c:3.2-29: [ x in ⊤ ∧ [-2;2] ]
+tests/20_reduced/0129_div.c:4.2-11: [ x in ⊤ ∧ [-2;2] ]
+stat trace: tests/20_reduced/0129_div.c:4.2-11: [ x in ⊤ ∧ [-2;2] ]
+stat trace: tests/20_reduced/0129_div.c:1.0-5.1: [ ]
+analysis ended

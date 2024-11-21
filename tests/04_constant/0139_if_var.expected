@@ -1,0 +1,3 @@
+tests/04_constant/0139_if_var.c:4.16-25: [ x in ⊤ ]
+tests/04_constant/0139_if_var.c:5.9-18: [ x in ⊤ ]
+analysis ended

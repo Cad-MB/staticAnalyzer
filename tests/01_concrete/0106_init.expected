@@ -1,0 +1,2 @@
+tests/01_concrete/0106_init.c:8.2-12: { [y=13;]; }
+analysis ended

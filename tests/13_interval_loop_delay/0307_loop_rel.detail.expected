@@ -1,0 +1,136 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand 0 10 ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:4.2-17: [ N in [0;10], x in [0;0] ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:5.2-8: [ N in [0;10], x in [0;0] ]
+-- DEBUG: [0;0] < [0;10] ~> [0;0], [1;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ x in [0;0], N in [1;10] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ N in [1;10], x in [0;0] ]
+-- DEBUG: rand 0 3 ~> [0;3]
+-- DEBUG: [0;0] + [0;3] ~> [0;3]
+-- DEBUG: is_bottom [0;3] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:8.4-22: [ N in [1;10], x in [0;3] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.16-9.3: [ N in [1;10], x in [0;3] ]
+-- DEBUG: [0;10] ⊔ [1;10] ~> [0;10]
+-- DEBUG: [0;0] ⊔ [0;3] ~> [0;3]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;3] ⊏ [0;0] ~> false
+-- DEBUG: [0;3] < [0;10] ~> [0;3], [1;10]
+-- DEBUG: [0;3] ⊓ [0;3] ~> [0;3]
+-- DEBUG: is_bottom [0;3] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ x in [0;3], N in [1;10] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ N in [1;10], x in [0;3] ]
+-- DEBUG: rand 0 3 ~> [0;3]
+-- DEBUG: [0;3] + [0;3] ~> [0;6]
+-- DEBUG: is_bottom [0;6] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:8.4-22: [ N in [1;10], x in [0;6] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.16-9.3: [ N in [1;10], x in [0;6] ]
+-- DEBUG: [0;10] ⊔ [1;10] ~> [0;10]
+-- DEBUG: [0;0] ⊔ [0;6] ~> [0;6]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;6] ⊏ [0;3] ~> false
+-- DEBUG: [0;6] < [0;10] ~> [0;6], [1;10]
+-- DEBUG: [0;6] ⊓ [0;6] ~> [0;6]
+-- DEBUG: is_bottom [0;6] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ x in [0;6], N in [1;10] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ N in [1;10], x in [0;6] ]
+-- DEBUG: rand 0 3 ~> [0;3]
+-- DEBUG: [0;6] + [0;3] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:8.4-22: [ N in [1;10], x in [0;9] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.16-9.3: [ N in [1;10], x in [0;9] ]
+-- DEBUG: [0;10] ⊔ [1;10] ~> [0;10]
+-- DEBUG: [0;0] ⊔ [0;9] ~> [0;9]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;9] ⊏ [0;6] ~> false
+-- DEBUG: [0;9] < [0;10] ~> [0;9], [1;10]
+-- DEBUG: [0;9] ⊓ [0;9] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ x in [0;9], N in [1;10] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ N in [1;10], x in [0;9] ]
+-- DEBUG: rand 0 3 ~> [0;3]
+-- DEBUG: [0;9] + [0;3] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:8.4-22: [ N in [1;10], x in [0;12] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.16-9.3: [ N in [1;10], x in [0;12] ]
+-- DEBUG: [0;10] ⊔ [1;10] ~> [0;10]
+-- DEBUG: [0;0] ⊔ [0;12] ~> [0;12]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;12] ⊏ [0;9] ~> false
+-- DEBUG: [0;10] ▿ [0;10] ~> [0;10]
+-- DEBUG: [0;9] ▿ [0;12] ~> [0;+∞]
+-- DEBUG: [0;+∞] < [0;10] ~> [0;9], [1;10]
+-- DEBUG: [0;+∞] ⊓ [0;9] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ x in [0;9], N in [1;10] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:7.4-15: [ N in [1;10], x in [0;9] ]
+-- DEBUG: rand 0 3 ~> [0;3]
+-- DEBUG: [0;9] + [0;3] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:8.4-22: [ N in [1;10], x in [0;12] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.16-9.3: [ N in [1;10], x in [0;12] ]
+-- DEBUG: [0;10] ⊔ [1;10] ~> [0;10]
+-- DEBUG: [0;0] ⊔ [0;12] ~> [0;12]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;12] ⊏ [0;+∞] ~> true
+-- DEBUG: [0;12] >= [0;10] ~> [0;12], [0;10]
+-- DEBUG: [0;12] ⊓ [0;12] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:6.2-9.3: [ N in [0;10], x in [0;12] ]
+-- DEBUG: const 3 ~> [3;3]
+-- DEBUG: [0;10] + [3;3] ~> [3;13]
+-- DEBUG: [0;12] >= [3;13] ~> [3;12], [3;12]
+-- DEBUG: [0;12] ⊓ [3;12] ~> [3;12]
+-- DEBUG: is_bottom [3;12] ~> false
+-- DEBUG: [0;10] + [3;3] (bwd from [3;12]) ~> [0;9], [3;3]
+-- DEBUG: [0;10] ⊓ [0;9] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+-- DEBUG: [3;3] ⊓ [3;3] ~> [3;3]
+-- DEBUG: is_bottom [3;3] ~> false
+-- DEBUG: [0;12] < [0;10] ~> [0;9], [1;10]
+-- DEBUG: [0;12] ⊓ [0;9] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+-- DEBUG: [1;10] ⊔ [0;9] ~> [0;10]
+-- DEBUG: [0;9] ⊔ [3;12] ~> [0;12]
+tests/13_interval_loop_delay/0307_loop_rel.c:10.2-24: ERROR: assertion failure
+-- DEBUG: const 3 ~> [3;3]
+-- DEBUG: [0;10] + [3;3] ~> [3;13]
+-- DEBUG: [0;12] < [3;13] ~> [0;12], [3;13]
+-- DEBUG: [0;12] ⊓ [0;12] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+-- DEBUG: [0;10] + [3;3] (bwd from [3;13]) ~> [0;10], [3;3]
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [3;3] ⊓ [3;3] ~> [3;3]
+-- DEBUG: is_bottom [3;3] ~> false
+-- DEBUG: [0;12] >= [0;10] ~> [0;12], [0;10]
+-- DEBUG: [0;12] ⊓ [0;12] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [0;12] ⊓ [0;12] ~> [0;12]
+-- DEBUG: is_bottom [0;12] ~> false
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:10.2-24: [ N in [0;10], x in [0;12] ]
+stat trace: tests/13_interval_loop_delay/0307_loop_rel.c:1.0-11.1: [ ]
+analysis ended

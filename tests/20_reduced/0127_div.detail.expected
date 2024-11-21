@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 15 ~> odd ∧ [15;15]
+-- DEBUG: const 3 ~> odd ∧ [3;3]
+-- DEBUG: odd ∧ [15;15] / odd ∧ [3;3] ~> odd ∧ [5;5]
+-- DEBUG: is_bottom odd ∧ [5;5] ~> false
+stat trace: tests/20_reduced/0127_div.c:3.2-13: [ x in odd ∧ [5;5] ]
+tests/20_reduced/0127_div.c:4.2-11: [ x in odd ∧ [5;5] ]
+stat trace: tests/20_reduced/0127_div.c:4.2-11: [ x in odd ∧ [5;5] ]
+stat trace: tests/20_reduced/0127_div.c:1.0-5.1: [ ]
+analysis ended

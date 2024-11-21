@@ -1,0 +1,2 @@
+tests/20_reduced/0104_init.c:4.2-12: [ x in even ∧ [2;2] ]
+analysis ended

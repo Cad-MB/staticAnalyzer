@@ -1,0 +1,7 @@
+tests/13_interval_loop_delay/0306_loop_rel.c:7.4-15: [ x in [0;0], N in [1;10] ]
+tests/13_interval_loop_delay/0306_loop_rel.c:7.4-15: [ x in [0;1], N in [1;10] ]
+tests/13_interval_loop_delay/0306_loop_rel.c:7.4-15: [ x in [0;2], N in [1;10] ]
+tests/13_interval_loop_delay/0306_loop_rel.c:7.4-15: [ x in [0;3], N in [1;10] ]
+tests/13_interval_loop_delay/0306_loop_rel.c:7.4-15: [ x in [0;9], N in [1;10] ]
+tests/13_interval_loop_delay/0306_loop_rel.c:10.2-15: ERROR: assertion failure
+analysis ended

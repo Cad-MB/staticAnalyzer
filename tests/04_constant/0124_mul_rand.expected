@@ -1,0 +1,2 @@
+tests/04_constant/0124_mul_rand.c:5.2-11: [ x in {0} ]
+analysis ended

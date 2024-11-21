@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: const 8 ~> {8}
+-- DEBUG: {5} * {8} ~> {40}
+-- DEBUG: is_bottom {40} ~> false
+stat trace: tests/04_constant/0120_mul.c:3.2-12: [ x in {40} ]
+tests/04_constant/0120_mul.c:4.2-11: [ x in {40} ]
+stat trace: tests/04_constant/0120_mul.c:4.2-11: [ x in {40} ]
+stat trace: tests/04_constant/0120_mul.c:1.0-5.1: [ ]
+analysis ended

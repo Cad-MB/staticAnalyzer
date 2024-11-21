@@ -1,0 +1,2 @@
+tests/04_constant/0106_init.c:8.2-12: [ y in {13} ]
+analysis ended

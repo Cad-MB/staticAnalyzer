@@ -1,0 +1,2 @@
+tests/10_interval/0121_mul_rand.c:4.2-11: [ x in [10;24] ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/04_constant/0120_mul.c:4.2-11: [ x in {40} ]
+analysis ended

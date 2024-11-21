@@ -1,0 +1,2 @@
+tests/01_concrete/0136_else_true.c:5.2-11: { [x=5;]; }
+analysis ended

@@ -1,0 +1,13 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 12 ~> [12;12]
+-- DEBUG: is_bottom [12;12] ~> false
+stat trace: tests/10_interval/0106_init.c:3.2-9: [ x in [12;12] ]
+stat trace: tests/10_interval/0106_init.c:1.0-4.1: [ ]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 13 ~> [13;13]
+-- DEBUG: is_bottom [13;13] ~> false
+stat trace: tests/10_interval/0106_init.c:7.2-9: [ y in [13;13] ]
+tests/10_interval/0106_init.c:8.2-12: [ y in [13;13] ]
+stat trace: tests/10_interval/0106_init.c:8.2-12: [ y in [13;13] ]
+stat trace: tests/10_interval/0106_init.c:5.0-9.1: [ ]
+analysis ended

@@ -1,0 +1,9 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: rand 10 15 ~> ⊤ ∧ [10;15]
+-- DEBUG: - ⊤ ∧ [10;15] ~> ⊤ ∧ [-15;-10]
+-- DEBUG: is_bottom ⊤ ∧ [-15;-10] ~> false
+stat trace: tests/20_reduced/0116_neg_rand.c:3.2-19: [ x in ⊤ ∧ [-15;-10] ]
+tests/20_reduced/0116_neg_rand.c:4.2-11: [ x in ⊤ ∧ [-15;-10] ]
+stat trace: tests/20_reduced/0116_neg_rand.c:4.2-11: [ x in ⊤ ∧ [-15;-10] ]
+stat trace: tests/20_reduced/0116_neg_rand.c:1.0-5.1: [ ]
+analysis ended

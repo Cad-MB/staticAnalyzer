@@ -1,0 +1,7 @@
+-- DEBUG: const 0 ~> {0}
+stat trace: tests/04_constant/0103_decl.c:1.0-3.1: [ ]
+-- DEBUG: const 0 ~> {0}
+tests/04_constant/0103_decl.c:6.2-12: [ y in {0} ]
+stat trace: tests/04_constant/0103_decl.c:6.2-12: [ y in {0} ]
+stat trace: tests/04_constant/0103_decl.c:4.0-7.1: [ ]
+analysis ended

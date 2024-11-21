@@ -1,0 +1,2 @@
+tests/01_concrete/0109_assign.c:4.2-11: { [x=4;]; }
+analysis ended

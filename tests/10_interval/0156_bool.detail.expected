@@ -1,0 +1,85 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand 13 17 ~> [13;17]
+-- DEBUG: is_bottom [13;17] ~> false
+stat trace: tests/10_interval/0156_bool.c:4.2-18: [ x in [13;17], y in [0;0] ]
+-- DEBUG: rand 13 17 ~> [13;17]
+-- DEBUG: is_bottom [13;17] ~> false
+stat trace: tests/10_interval/0156_bool.c:5.2-18: [ x in [13;17], y in [13;17] ]
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] <= [15;15] ~> [13;15], [15;15]
+-- DEBUG: [13;17] ⊓ [13;15] ~> [13;15]
+-- DEBUG: is_bottom [13;15] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] >= [15;15] ~> [15;17], [15;15]
+-- DEBUG: [13;17] ⊓ [15;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [15;17] ⊓ [13;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [13;17] ⊓ [13;15] ~> [13;15]
+-- DEBUG: is_bottom [13;15] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] >= [15;15] ~> [15;17], [15;15]
+-- DEBUG: [13;17] ⊓ [15;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] <= [15;15] ~> [13;15], [15;15]
+-- DEBUG: [13;17] ⊓ [13;15] ~> [13;15]
+-- DEBUG: is_bottom [13;15] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [13;15] ⊓ [13;17] ~> [13;15]
+-- DEBUG: is_bottom [13;15] ~> false
+-- DEBUG: [13;17] ⊓ [15;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [13;15] ⊔ [15;17] ~> [13;17]
+-- DEBUG: [15;17] ⊔ [13;15] ~> [13;17]
+tests/10_interval/0156_bool.c:6.42-53: [ x in [13;17], y in [13;17] ]
+stat trace: tests/10_interval/0156_bool.c:6.42-53: [ x in [13;17], y in [13;17] ]
+stat trace: tests/10_interval/0156_bool.c:6.40-55: [ x in [13;17], y in [13;17] ]
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] > [15;15] ~> [16;17], [15;15]
+-- DEBUG: [13;17] ⊓ [16;17] ~> [16;17]
+-- DEBUG: is_bottom [16;17] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] < [15;15] ~> [13;14], [15;15]
+-- DEBUG: [13;17] ⊓ [13;14] ~> [13;14]
+-- DEBUG: is_bottom [13;14] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [13;14] ⊔ [13;17] ~> [13;17]
+-- DEBUG: [13;17] ⊔ [16;17] ~> [13;17]
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] < [15;15] ~> [13;14], [15;15]
+-- DEBUG: [13;17] ⊓ [13;14] ~> [13;14]
+-- DEBUG: is_bottom [13;14] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] > [15;15] ~> [16;17], [15;15]
+-- DEBUG: [13;17] ⊓ [16;17] ~> [16;17]
+-- DEBUG: is_bottom [16;17] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [16;17] ⊔ [13;17] ~> [13;17]
+-- DEBUG: [13;17] ⊔ [13;14] ~> [13;17]
+-- DEBUG: [13;17] ⊓ [13;17] ~> [13;17]
+-- DEBUG: is_bottom [13;17] ~> false
+-- DEBUG: [13;17] ⊓ [13;17] ~> [13;17]
+-- DEBUG: is_bottom [13;17] ~> false
+tests/10_interval/0156_bool.c:7.9-20: [ x in [13;17], y in [13;17] ]
+stat trace: tests/10_interval/0156_bool.c:7.9-20: [ x in [13;17], y in [13;17] ]
+stat trace: tests/10_interval/0156_bool.c:7.7-22: [ x in [13;17], y in [13;17] ]
+-- DEBUG: [13;17] ⊔ [13;17] ~> [13;17]
+-- DEBUG: [13;17] ⊔ [13;17] ~> [13;17]
+stat trace: tests/10_interval/0156_bool.c:6.2-7.22: [ x in [13;17], y in [13;17] ]
+stat trace: tests/10_interval/0156_bool.c:1.0-8.1: [ ]
+analysis ended

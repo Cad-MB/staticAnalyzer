@@ -1,0 +1,38 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 11 ~> {11}
+-- DEBUG: {0} < {11} ~> {0}, {11}
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {11} ⊓ {11} ~> {11}
+-- DEBUG: is_bottom {11} ~> false
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {0} + {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+stat trace: tests/04_constant/0209_loop_reduced.c:4.4-14: [ x in {2} ]
+stat trace: tests/04_constant/0209_loop_reduced.c:3.15-5.3: [ x in {2} ]
+-- DEBUG: {0} ⊔ {2} ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 11 ~> {11}
+-- DEBUG: ⊤ < {11} ~> ⊤, {11}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {11} ⊓ {11} ~> {11}
+-- DEBUG: is_bottom {11} ~> false
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: ⊤ + {2} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0209_loop_reduced.c:4.4-14: [ x in ⊤ ]
+stat trace: tests/04_constant/0209_loop_reduced.c:3.15-5.3: [ x in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 11 ~> {11}
+-- DEBUG: ⊤ >= {11} ~> ⊤, {11}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {11} ⊓ {11} ~> {11}
+-- DEBUG: is_bottom {11} ~> false
+stat trace: tests/04_constant/0209_loop_reduced.c:3.2-5.3: [ x in ⊤ ]
+tests/04_constant/0209_loop_reduced.c:6.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0209_loop_reduced.c:6.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0209_loop_reduced.c:1.0-7.1: [ ]
+analysis ended

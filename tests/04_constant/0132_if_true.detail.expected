@@ -1,0 +1,24 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0132_if_true.c:3.2-8: [ x in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {1} <= {2} ~> {1}, {2}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {2} ⊓ {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0132_if_true.c:4.14-20: [ x in {1} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {1} > {2} ~> ⊥, ⊥
+-- DEBUG: {1} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/04_constant/0132_if_true.c:4.2-20: [ x in {1} ]
+tests/04_constant/0132_if_true.c:5.2-11: [ x in {1} ]
+stat trace: tests/04_constant/0132_if_true.c:5.2-11: [ x in {1} ]
+stat trace: tests/04_constant/0132_if_true.c:1.0-6.1: [ ]
+analysis ended

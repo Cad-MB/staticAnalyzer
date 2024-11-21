@@ -1,0 +1,2 @@
+tests/20_reduced/0109_assign.c:4.2-11: [ x in even ∧ [4;4] ]
+analysis ended

@@ -1,0 +1,25 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand 10 14 ~> [10;14]
+-- DEBUG: is_bottom [10;14] ~> false
+stat trace: tests/10_interval/0144_cmp_lt.c:4.2-18: [ x in [10;14], y in [0;0] ]
+-- DEBUG: rand 8 13 ~> [8;13]
+-- DEBUG: is_bottom [8;13] ~> false
+stat trace: tests/10_interval/0144_cmp_lt.c:5.2-17: [ x in [10;14], y in [8;13] ]
+-- DEBUG: [10;14] < [8;13] ~> [10;12], [11;13]
+-- DEBUG: [10;14] ⊓ [10;12] ~> [10;12]
+-- DEBUG: is_bottom [10;12] ~> false
+-- DEBUG: [8;13] ⊓ [11;13] ~> [11;13]
+-- DEBUG: is_bottom [11;13] ~> false
+tests/10_interval/0144_cmp_lt.c:6.13-24: [ x in [10;12], y in [11;13] ]
+stat trace: tests/10_interval/0144_cmp_lt.c:6.13-24: [ x in [10;12], y in [11;13] ]
+-- DEBUG: [10;14] >= [8;13] ~> [10;14], [8;13]
+-- DEBUG: [10;14] ⊓ [10;14] ~> [10;14]
+-- DEBUG: is_bottom [10;14] ~> false
+-- DEBUG: [8;13] ⊓ [8;13] ~> [8;13]
+-- DEBUG: is_bottom [8;13] ~> false
+-- DEBUG: [10;12] ⊔ [10;14] ~> [10;14]
+-- DEBUG: [11;13] ⊔ [8;13] ~> [8;13]
+stat trace: tests/10_interval/0144_cmp_lt.c:6.2-24: [ x in [10;14], y in [8;13] ]
+stat trace: tests/10_interval/0144_cmp_lt.c:1.0-7.1: [ ]
+analysis ended

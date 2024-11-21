@@ -1,0 +1,12 @@
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+tests/02_concrete_loop/0201_loop.c:5.4-13: { [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; [x=6;]; [x=7;]; [x=8;]; [x=9;]; }
+analysis ended

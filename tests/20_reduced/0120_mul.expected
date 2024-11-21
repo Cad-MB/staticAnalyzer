@@ -1,0 +1,2 @@
+tests/20_reduced/0120_mul.c:4.2-11: [ x in even ∧ [40;40] ]
+analysis ended

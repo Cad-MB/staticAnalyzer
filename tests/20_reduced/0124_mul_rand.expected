@@ -1,0 +1,2 @@
+tests/20_reduced/0124_mul_rand.c:5.2-11: [ x in even ∧ [0;0] ]
+analysis ended

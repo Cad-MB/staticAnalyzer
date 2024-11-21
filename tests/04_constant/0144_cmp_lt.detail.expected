@@ -1,0 +1,23 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand 10 14 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0144_cmp_lt.c:4.2-18: [ x in ⊤, y in {0} ]
+-- DEBUG: rand 8 13 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0144_cmp_lt.c:5.2-17: [ x in ⊤, y in ⊤ ]
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0144_cmp_lt.c:6.13-24: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0144_cmp_lt.c:6.13-24: [ x in ⊤, y in ⊤ ]
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0144_cmp_lt.c:6.2-24: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0144_cmp_lt.c:1.0-7.1: [ ]
+analysis ended

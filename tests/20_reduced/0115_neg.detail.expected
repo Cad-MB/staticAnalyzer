@@ -1,0 +1,9 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 9 ~> odd ∧ [9;9]
+-- DEBUG: - odd ∧ [9;9] ~> odd ∧ [-9;-9]
+-- DEBUG: is_bottom odd ∧ [-9;-9] ~> false
+stat trace: tests/20_reduced/0115_neg.c:3.2-9: [ x in odd ∧ [-9;-9] ]
+tests/20_reduced/0115_neg.c:4.2-11: [ x in odd ∧ [-9;-9] ]
+stat trace: tests/20_reduced/0115_neg.c:4.2-11: [ x in odd ∧ [-9;-9] ]
+stat trace: tests/20_reduced/0115_neg.c:1.0-5.1: [ ]
+analysis ended

@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 15 ~> {15}
+-- DEBUG: const 3 ~> {3}
+-- DEBUG: {15} / {3} ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+stat trace: tests/04_constant/0127_div.c:3.2-13: [ x in {5} ]
+tests/04_constant/0127_div.c:4.2-11: [ x in {5} ]
+stat trace: tests/04_constant/0127_div.c:4.2-11: [ x in {5} ]
+stat trace: tests/04_constant/0127_div.c:1.0-5.1: [ ]
+analysis ended

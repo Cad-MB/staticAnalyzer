@@ -1,0 +1,41 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand 13 17 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0155_not.c:4.2-18: [ x in ⊤, y in {0} ]
+-- DEBUG: rand 33 37 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0155_not.c:5.2-18: [ x in ⊤, y in ⊤ ]
+-- DEBUG: const 35 ~> {35}
+-- DEBUG: ⊤ >= {35} ~> ⊤, {35}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {35} ⊓ {35} ~> {35}
+-- DEBUG: is_bottom {35} ~> false
+-- DEBUG: const 15 ~> {15}
+-- DEBUG: ⊤ < {15} ~> ⊤, {15}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {15} ⊓ {15} ~> {15}
+-- DEBUG: is_bottom {15} ~> false
+tests/04_constant/0155_not.c:6.27-38: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:6.27-38: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:6.25-40: [ x in ⊤, y in ⊤ ]
+-- DEBUG: const 35 ~> {35}
+-- DEBUG: ⊤ < {35} ~> ⊤, {35}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {35} ⊓ {35} ~> {35}
+-- DEBUG: is_bottom {35} ~> false
+-- DEBUG: const 15 ~> {15}
+-- DEBUG: ⊤ >= {15} ~> ⊤, {15}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {15} ⊓ {15} ~> {15}
+-- DEBUG: is_bottom {15} ~> false
+tests/04_constant/0155_not.c:7.9-20: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:7.9-20: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:7.7-22: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:6.2-7.22: [ x in ⊤, y in ⊤ ]
+stat trace: tests/04_constant/0155_not.c:1.0-8.1: [ ]
+analysis ended

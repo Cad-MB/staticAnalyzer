@@ -1,0 +1,3 @@
+tests/10_interval/0114_incr.c:4.2-11: [ x in [12;12] ]
+tests/10_interval/0114_incr.c:6.2-11: [ x in [14;14] ]
+analysis ended

@@ -1,0 +1,39 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+-- DEBUG: const 11 ~> odd ∧ [11;11]
+-- DEBUG: even ∧ [0;0] < odd ∧ [11;11] ~> even ∧ [0;0], odd ∧ [11;11]
+-- DEBUG: even ∧ [0;0] ⊓ even ∧ [0;0] ~> even ∧ [0;0]
+-- DEBUG: is_bottom even ∧ [0;0] ~> false
+-- DEBUG: odd ∧ [11;11] ⊓ odd ∧ [11;11] ~> odd ∧ [11;11]
+-- DEBUG: is_bottom odd ∧ [11;11] ~> false
+-- DEBUG: const 2 ~> even ∧ [2;2]
+-- DEBUG: even ∧ [0;0] + even ∧ [2;2] ~> even ∧ [2;2]
+-- DEBUG: is_bottom even ∧ [2;2] ~> false
+stat trace: tests/20_reduced/0209_loop_reduced.c:4.4-14: [ x in even ∧ [2;2] ]
+stat trace: tests/20_reduced/0209_loop_reduced.c:3.15-5.3: [ x in even ∧ [2;2] ]
+-- DEBUG: even ∧ [0;0] ⊔ even ∧ [2;2] ~> even ∧ [0;2]
+-- DEBUG: even ∧ [0;2] ⊏ even ∧ [0;0] ~> false
+-- DEBUG: even ∧ [0;0] ▿ even ∧ [0;2] ~> even ∧ [0;+∞]
+-- DEBUG: const 11 ~> odd ∧ [11;11]
+-- DEBUG: even ∧ [0;+∞] < odd ∧ [11;11] ~> even ∧ [0;10], odd ∧ [11;11]
+-- DEBUG: even ∧ [0;+∞] ⊓ even ∧ [0;10] ~> even ∧ [0;10]
+-- DEBUG: is_bottom even ∧ [0;10] ~> false
+-- DEBUG: odd ∧ [11;11] ⊓ odd ∧ [11;11] ~> odd ∧ [11;11]
+-- DEBUG: is_bottom odd ∧ [11;11] ~> false
+-- DEBUG: const 2 ~> even ∧ [2;2]
+-- DEBUG: even ∧ [0;10] + even ∧ [2;2] ~> even ∧ [2;12]
+-- DEBUG: is_bottom even ∧ [2;12] ~> false
+stat trace: tests/20_reduced/0209_loop_reduced.c:4.4-14: [ x in even ∧ [2;12] ]
+stat trace: tests/20_reduced/0209_loop_reduced.c:3.15-5.3: [ x in even ∧ [2;12] ]
+-- DEBUG: even ∧ [0;0] ⊔ even ∧ [2;12] ~> even ∧ [0;12]
+-- DEBUG: even ∧ [0;12] ⊏ even ∧ [0;+∞] ~> true
+-- DEBUG: const 11 ~> odd ∧ [11;11]
+-- DEBUG: even ∧ [0;12] >= odd ∧ [11;11] ~> even ∧ [12;12], odd ∧ [11;11]
+-- DEBUG: even ∧ [0;12] ⊓ even ∧ [12;12] ~> even ∧ [12;12]
+-- DEBUG: is_bottom even ∧ [12;12] ~> false
+-- DEBUG: odd ∧ [11;11] ⊓ odd ∧ [11;11] ~> odd ∧ [11;11]
+-- DEBUG: is_bottom odd ∧ [11;11] ~> false
+stat trace: tests/20_reduced/0209_loop_reduced.c:3.2-5.3: [ x in even ∧ [12;12] ]
+tests/20_reduced/0209_loop_reduced.c:6.2-11: [ x in even ∧ [12;12] ]
+stat trace: tests/20_reduced/0209_loop_reduced.c:6.2-11: [ x in even ∧ [12;12] ]
+stat trace: tests/20_reduced/0209_loop_reduced.c:1.0-7.1: [ ]
+analysis ended

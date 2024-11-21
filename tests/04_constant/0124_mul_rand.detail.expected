@@ -1,0 +1,12 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand -1 1 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0124_mul_rand.c:3.2-17: [ x in ⊤ ]
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ * {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0124_mul_rand.c:4.2-12: [ x in {0} ]
+tests/04_constant/0124_mul_rand.c:5.2-11: [ x in {0} ]
+stat trace: tests/04_constant/0124_mul_rand.c:5.2-11: [ x in {0} ]
+stat trace: tests/04_constant/0124_mul_rand.c:1.0-6.1: [ ]
+analysis ended

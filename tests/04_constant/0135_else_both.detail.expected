@@ -1,0 +1,30 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0135_else_both.c:3.2-8: [ x in {1} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+stat trace: tests/04_constant/0135_else_both.c:4.22-28: [ x in {5} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: const 10 ~> {10}
+-- DEBUG: is_bottom {10} ~> false
+stat trace: tests/04_constant/0135_else_both.c:4.34-41: [ x in {10} ]
+-- DEBUG: {5} ⊔ {10} ~> ⊤
+stat trace: tests/04_constant/0135_else_both.c:4.2-41: [ x in ⊤ ]
+tests/04_constant/0135_else_both.c:5.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0135_else_both.c:5.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0135_else_both.c:1.0-6.1: [ ]
+analysis ended

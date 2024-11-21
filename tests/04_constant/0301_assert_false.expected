@@ -1,0 +1,3 @@
+tests/04_constant/0301_assert_false.c:4.2-17: ERROR: assertion failure
+tests/04_constant/0301_assert_false.c:5.2-11: ⊥
+analysis ended

@@ -1,0 +1,76 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand 0 10 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:4.2-17: [ N in ⊤, x in {0} ]
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:5.2-8: [ N in ⊤, x in {0} ]
+-- DEBUG: {0} < ⊤ ~> {0}, ⊤
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0307_loop_rel.c:7.4-15: [ x in {0}, N in ⊤ ]
+stat trace: tests/04_constant/0307_loop_rel.c:7.4-15: [ N in ⊤, x in {0} ]
+-- DEBUG: rand 0 3 ~> ⊤
+-- DEBUG: {0} + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:8.4-22: [ N in ⊤, x in ⊤ ]
+stat trace: tests/04_constant/0307_loop_rel.c:6.16-9.3: [ N in ⊤, x in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0307_loop_rel.c:7.4-15: [ x in ⊤, N in ⊤ ]
+stat trace: tests/04_constant/0307_loop_rel.c:7.4-15: [ N in ⊤, x in ⊤ ]
+-- DEBUG: rand 0 3 ~> ⊤
+-- DEBUG: ⊤ + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:8.4-22: [ N in ⊤, x in ⊤ ]
+stat trace: tests/04_constant/0307_loop_rel.c:6.16-9.3: [ N in ⊤, x in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:6.2-9.3: [ N in ⊤, x in ⊤ ]
+-- DEBUG: const 3 ~> {3}
+-- DEBUG: ⊤ + {3} ~> ⊤
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ + {3} (bwd from ⊤) ~> ⊤, {3}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {3} ⊓ {3} ~> {3}
+-- DEBUG: is_bottom {3} ~> false
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0307_loop_rel.c:10.2-24: ERROR: assertion failure
+-- DEBUG: const 3 ~> {3}
+-- DEBUG: ⊤ + {3} ~> ⊤
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ + {3} (bwd from ⊤) ~> ⊤, {3}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {3} ⊓ {3} ~> {3}
+-- DEBUG: is_bottom {3} ~> false
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0307_loop_rel.c:10.2-24: [ N in ⊤, x in ⊤ ]
+stat trace: tests/04_constant/0307_loop_rel.c:1.0-11.1: [ ]
+analysis ended

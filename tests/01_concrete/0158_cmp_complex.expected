@@ -1,0 +1,2 @@
+tests/01_concrete/0158_cmp_complex.c:8.20-29: { [z=3;]; }
+analysis ended

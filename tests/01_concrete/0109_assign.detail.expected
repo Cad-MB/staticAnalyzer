@@ -1,0 +1,5 @@
+stat trace: tests/01_concrete/0109_assign.c:3.2-12: { [x=4;]; }
+tests/01_concrete/0109_assign.c:4.2-11: { [x=4;]; }
+stat trace: tests/01_concrete/0109_assign.c:4.2-11: { [x=4;]; }
+stat trace: tests/01_concrete/0109_assign.c:1.0-5.1: { []; }
+analysis ended

@@ -1,0 +1,49 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand 13 17 ~> [13;17]
+-- DEBUG: is_bottom [13;17] ~> false
+stat trace: tests/10_interval/0153_and.c:4.2-18: [ x in [13;17], y in [0;0] ]
+-- DEBUG: rand 33 37 ~> [33;37]
+-- DEBUG: is_bottom [33;37] ~> false
+stat trace: tests/10_interval/0153_and.c:5.2-18: [ x in [13;17], y in [33;37] ]
+-- DEBUG: const 35 ~> [35;35]
+-- DEBUG: [33;37] >= [35;35] ~> [35;37], [35;35]
+-- DEBUG: [33;37] ⊓ [35;37] ~> [35;37]
+-- DEBUG: is_bottom [35;37] ~> false
+-- DEBUG: [35;35] ⊓ [35;35] ~> [35;35]
+-- DEBUG: is_bottom [35;35] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] >= [15;15] ~> [15;17], [15;15]
+-- DEBUG: [13;17] ⊓ [15;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [15;17] ⊓ [13;17] ~> [15;17]
+-- DEBUG: is_bottom [15;17] ~> false
+-- DEBUG: [33;37] ⊓ [35;37] ~> [35;37]
+-- DEBUG: is_bottom [35;37] ~> false
+tests/10_interval/0153_and.c:6.24-35: [ x in [15;17], y in [35;37] ]
+stat trace: tests/10_interval/0153_and.c:6.24-35: [ x in [15;17], y in [35;37] ]
+stat trace: tests/10_interval/0153_and.c:6.22-37: [ x in [15;17], y in [35;37] ]
+-- DEBUG: const 35 ~> [35;35]
+-- DEBUG: [33;37] < [35;35] ~> [33;34], [35;35]
+-- DEBUG: [33;37] ⊓ [33;34] ~> [33;34]
+-- DEBUG: is_bottom [33;34] ~> false
+-- DEBUG: [35;35] ⊓ [35;35] ~> [35;35]
+-- DEBUG: is_bottom [35;35] ~> false
+-- DEBUG: const 15 ~> [15;15]
+-- DEBUG: [13;17] < [15;15] ~> [13;14], [15;15]
+-- DEBUG: [13;17] ⊓ [13;14] ~> [13;14]
+-- DEBUG: is_bottom [13;14] ~> false
+-- DEBUG: [15;15] ⊓ [15;15] ~> [15;15]
+-- DEBUG: is_bottom [15;15] ~> false
+-- DEBUG: [13;14] ⊔ [13;17] ~> [13;17]
+-- DEBUG: [33;37] ⊔ [33;34] ~> [33;37]
+tests/10_interval/0153_and.c:7.9-20: [ x in [13;17], y in [33;37] ]
+stat trace: tests/10_interval/0153_and.c:7.9-20: [ x in [13;17], y in [33;37] ]
+stat trace: tests/10_interval/0153_and.c:7.7-22: [ x in [13;17], y in [33;37] ]
+-- DEBUG: [15;17] ⊔ [13;17] ~> [13;17]
+-- DEBUG: [35;37] ⊔ [33;37] ~> [33;37]
+stat trace: tests/10_interval/0153_and.c:6.2-7.22: [ x in [13;17], y in [33;37] ]
+stat trace: tests/10_interval/0153_and.c:1.0-8.1: [ ]
+analysis ended

@@ -1,0 +1,3 @@
+tests/10_interval/0155_not.c:6.27-38: [ x in [13;17], y in [33;37] ]
+tests/10_interval/0155_not.c:7.9-20: [ x in [15;17], y in [33;34] ]
+analysis ended

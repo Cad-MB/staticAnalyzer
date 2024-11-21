@@ -1,0 +1,20 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 9 ~> {9}
+-- DEBUG: is_bottom {9} ~> false
+stat trace: tests/04_constant/0301_assert_false.c:3.2-8: [ x in {9} ]
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: {9} >= {5} ~> {9}, {5}
+-- DEBUG: {9} ⊓ {9} ~> {9}
+-- DEBUG: is_bottom {9} ~> false
+-- DEBUG: {5} ⊓ {5} ~> {5}
+-- DEBUG: is_bottom {5} ~> false
+tests/04_constant/0301_assert_false.c:4.2-17: ERROR: assertion failure
+-- DEBUG: const 5 ~> {5}
+-- DEBUG: {9} < {5} ~> ⊥, ⊥
+-- DEBUG: {9} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+stat trace: tests/04_constant/0301_assert_false.c:4.2-17: ⊥
+tests/04_constant/0301_assert_false.c:5.2-11: ⊥
+stat trace: tests/04_constant/0301_assert_false.c:5.2-11: ⊥
+stat trace: tests/04_constant/0301_assert_false.c:1.0-6.1: ⊥
+analysis ended

@@ -1,0 +1,2 @@
+tests/12_interval_loop/0308_loop_init.c:15.2-12: [ init in [0;+∞], x in [0;+∞] ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/20_reduced/0119_assign.c:6.2-11: [ y in odd ∧ [17;17] ]
+analysis ended

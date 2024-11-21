@@ -1,0 +1,457 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Mapext.OrderedType.html">
+<link rel="Up" href="Mapext.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Mapext" rel="Chapter" href="Mapext.html"><link title="Additional functions" rel="Section" href="#2_Additionalfunctions">
+<title>Mapext.S</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Mapext.OrderedType.html" title="Mapext.OrderedType">Previous</a>
+&nbsp;<a class="up" href="Mapext.html" title="Mapext">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Mapext.S.html">Mapext.S</a></h1>
+
+<pre><span class="keyword">module type</span> S = <code class="code">sig</code> <a href="Mapext.S.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+Output signature of the functor <code class="code">Map.Make</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type"></code>key</span> </pre>
+<div class="info ">
+The type of the map keys.<br>
+</div>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a</code> t</span> </pre>
+<div class="info ">
+The type of maps from type <code class="code">key</code> to type <code class="code">'a</code>.<br>
+</div>
+
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+The empty map.<br>
+</div>
+
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+Test whether a map is empty or not.<br>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">mem x m</code> returns <code class="code">true</code> if <code class="code">m</code> contains a binding for <code class="code">x</code>,
+       and <code class="code">false</code> otherwise.<br>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add x y m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, plus a binding of <code class="code">x</code> to <code class="code">y</code>. If <code class="code">x</code> was already bound
+       in <code class="code">m</code>, its previous binding disappears.<br>
+</div>
+
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">singleton x y</code> returns the one-element map that contains a binding <code class="code">y</code>
+        for <code class="code">x</code>.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">remove x m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, except for <code class="code">x</code> which is unbound in the returned map.<br>
+</div>
+
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a option -> 'b option -> 'c option) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> 'c <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">merge f m1 m2</code> computes a map whose keys is a subset of keys of <code class="code">m1</code>
+        and of <code class="code">m2</code>. The presence of each such binding, and the corresponding
+        value, is determined with the function <code class="code">f</code>.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+Total ordering between maps.  The first argument is a total ordering
+        used to compare data associated with equal keys in the two maps.<br>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">equal cmp m1 m2</code> tests whether the maps <code class="code">m1</code> and <code class="code">m2</code> are
+       equal, that is, contain equal keys and associate them with
+       equal data.  <code class="code">cmp</code> is the equality predicate used to compare
+       the data associated with the keys.<br>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> unit) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter f m</code> applies <code class="code">f</code> to all bindings in map <code class="code">m</code>.
+       <code class="code">f</code> receives the key as first argument, and the associated value
+       as second argument.  The bindings are passed to <code class="code">f</code> in increasing
+       order with respect to the ordering over the type of the keys.<br>
+</div>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'b) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info ">
+<code class="code">fold f m a</code> computes <code class="code">(f kN dN ... (f k1 d1 a)...)</code>,
+       where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">m</code>
+       (in increasing order), and <code class="code">d1 ... dN</code> are the associated data.<br>
+</div>
+
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><br>
+<code class="code">for_all p m</code> checks if all the bindings of the map
+        satisfy the predicate <code class="code">p</code>.
+        The predicate <code class="code">p</code> is tested on bindings according to the key order.<br>
+
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><br>
+<code class="code">exists p m</code> checks if at least one binding of the map
+        satisfy the predicate <code class="code">p</code>.
+        The predicate <code class="code">p</code> is tested on bindings according to the key order.<br>
+
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><br>
+<code class="code">filter p m</code> returns the map with all the bindings in <code class="code">m</code>
+        that satisfy predicate <code class="code">p</code>.
+        The predicate <code class="code">p</code> is tested on bindings according to the key order.<br>
+
+<pre><span id="VALpartition"><span class="keyword">val</span> partition</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> * 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">partition p m</code> returns a pair of maps <code class="code">(m1, m2)</code>, where
+        <code class="code">m1</code> contains all the bindings of <code class="code">s</code> that satisfy the
+        predicate <code class="code">p</code>, and <code class="code">m2</code> is the map with all the bindings of
+        <code class="code">s</code> that do not satisfy <code class="code">p</code>.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALcardinal"><span class="keyword">val</span> cardinal</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+Return the number of bindings of a map.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALbindings"><span class="keyword">val</span> bindings</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> (<a href="Mapext.S.html#TYPEkey">key</a> * 'a) list</code></pre><div class="info ">
+Return the list of all bindings of the given map.
+       The returned list is sorted in increasing order with respect
+       to the ordering <code class="code">Ord.compare</code>, where <code class="code">Ord</code> is the argument
+       given to <code class="code">Map.Make</code>.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALmin_binding"><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return the smallest binding of the given map
+       (with respect to the <code class="code">Ord.compare</code> ordering), or raise
+       <code class="code">Not_found</code> if the map is empty.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALmax_binding"><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Same as <code class="code">Map.S.min_binding</code>, but returns the largest binding
+        of the given map.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+Return one binding of the given map, or raise <code class="code">Not_found</code> if
+       the map is empty. Which binding is chosen is unspecified,
+       but equal bindings will be chosen for equal maps.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> * 'a option * 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">split x m</code> returns a triple <code class="code">(l, data, r)</code>, where
+          <code class="code">l</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly less than <code class="code">x</code>;
+          <code class="code">r</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly greater than <code class="code">x</code>;
+          <code class="code">data</code> is <code class="code">None</code> if <code class="code">m</code> contains no binding for <code class="code">x</code>,
+          or <code class="code">Some v</code> if <code class="code">m</code> binds <code class="code">v</code> to <code class="code">x</code>.<br>
+<b>Since</b> 3.12.0<br>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<code class="code">find x m</code> returns the current binding of <code class="code">x</code> in <code class="code">m</code>,
+       or raises <code class="code">Not_found</code> if no such binding exists.<br>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map f m</code> returns a map with same domain as <code class="code">m</code>, where the
+       associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
+       replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
+       The bindings are passed to <code class="code">f</code> in increasing order
+       with respect to the ordering over the type of the keys.<br>
+</div>
+
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+Same as <code class="code">Map.S.map</code>, but the function receives as arguments both the
+       key and the associated value for each binding of the map.<br>
+</div>
+<br>
+<h2 id="2_Additionalfunctions">Additional functions</h2><br>
+
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> * 'a) list -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_list l</code> converts an association list to a map.<br>
+</div>
+
+<pre><span id="VALmap2"><span class="keyword">val</span> map2</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'c) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> 'c <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map2 f m1 m2</code> is similar to <code class="code">map</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key to construct a new map with the same key set.
+       <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+       The binging are passed to <code class="code">f</code> in increasing order of key.<br>
+</div>
+
+<pre><span id="VALiter2"><span class="keyword">val</span> iter2</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> unit) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter2 f m1 m2</code> is similar to <code class="code">map</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+       <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+       The binging are passed to <code class="code">f</code> in increasing order of key.<br>
+</div>
+
+<pre><span id="VALfold2"><span class="keyword">val</span> fold2</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'c -> 'c) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info ">
+<code class="code">fold2 f m1 m2 x</code> is similar to <code class="code">fold</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+       <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+       The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfor_all2"><span class="keyword">val</span> for_all2</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all2 f m1 m2</code> is similar to <code class="code">for_all</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+       <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+       The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALexists2"><span class="keyword">val</span> exists2</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">exists2 f m1 m2</code> is similar to <code class="code">exists</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+       <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+       The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALmap2z"><span class="keyword">val</span> map2z</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> 'a) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map2z f m1 m2</code> is similar to <code class="code">map2 f m1 m2</code>, but physically
+        equal subtrees are put unchanged into the result instead of
+        being traversed.
+        This is more efficient than <code class="code">map2</code>, and equivalent if <code class="code">f</code> is
+        side-effect free and idem-potent (<code class="code">f k a a = a</code>).
+        <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALiter2z"><span class="keyword">val</span> iter2z</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> unit) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter2z f m1 m2</code> is similar to <code class="code">iter2 f m1 m2</code>, but physically
+        equal subtrees are ignored.
+        This is more efficient than <code class="code">iter2</code>, and equivalent if 
+        <code class="code">f k a a</code> has no effect.
+        <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfold2z"><span class="keyword">val</span> fold2z</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> 'b -> 'b) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info ">
+<code class="code">fold2z f m1 m2 a</code> is similar to <code class="code">fold2 f m1 m2 a</code>, but physically
+        equal subtrees are ignored.
+        This is more efficient than <code class="code">fold2</code>, and equivalent if 
+        <code class="code">f k a a x = x</code> and has no effect.
+        <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfor_all2z"><span class="keyword">val</span> for_all2z</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all2z f m1 m2</code> is similar to <code class="code">for_all2 f m1 m2</code>, but returns
+        <code class="code">true</code> for physically equal subtrees without traversing them.
+        This is more efficient than <code class="code">for_all2z</code>, and equivalent if
+        <code class="code">f k a a = true</code> and has no effect.
+        <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALexists2z"><span class="keyword">val</span> exists2z</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">exists2z f m1 m2</code> is similar to <code class="code">exists2 f m1 m2</code>, but returns
+        <code class="code">false</code> for physically equal subtrees without traversing them.
+        This is more efficient than <code class="code">exists2z</code>, and equivalent if
+        <code class="code">f k a a = false</code> and has no effect.
+        <code class="code">m1</code> and <code class="code">m2</code> must have the same key sets.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALmap2o"><span class="keyword">val</span> map2o</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'c) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> 'c) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'c) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> 'c <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map2o f1 f2 f m1 m2</code> is similar to <code class="code">map2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+        To get a new binding, <code class="code">f1</code> is used for keys appearing only
+        in <code class="code">m1</code>, <code class="code">f2</code> for keys appearing only in <code class="code">m2</code>, and <code class="code">f</code> for
+        keys appearing in both maps.
+        The returned map has bindings for all keys appearing in either
+        <code class="code">m1</code> or <code class="code">m2</code>.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALiter2o"><span class="keyword">val</span> iter2o</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> unit) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> unit) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> unit) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter2o f1 f2 f m1 m2</code> is similar to <code class="code">iter2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+        <code class="code">f1</code> is called for keys appearing only in <code class="code">m1</code>, 
+        <code class="code">f2</code> for keys appearing only in <code class="code">m2</code>, 
+        and <code class="code">f</code> for keys appearing in both maps.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfold2o"><span class="keyword">val</span> fold2o</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'c -> 'c) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> 'c -> 'c) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'c -> 'c) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info ">
+<code class="code">fold2o f1 f2 f m1 m2 a</code> is similar to <code class="code">fold2 f m1 m2 a</code>, but 
+        accepts maps defined over different sets of keys.
+        <code class="code">f1</code> is called for keys appearing only in <code class="code">m1</code>, 
+        <code class="code">f2</code> for keys appearing only in <code class="code">m2</code>, 
+        and <code class="code">f</code> for keys appearing in both maps.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfor_all2o"><span class="keyword">val</span> for_all2o</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all2o f1 f2 f m1 m2</code> is similar to <code class="code">for_all2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+        <code class="code">f1</code> is called for keys appearing only in <code class="code">m1</code>, 
+        <code class="code">f2</code> for keys appearing only in <code class="code">m2</code>, 
+        and <code class="code">f</code> for keys appearing in both maps.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALexists2o"><span class="keyword">val</span> exists2o</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">fexists2o f1 f2 f m1 m2</code> is similar to <code class="code">fexists2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+        <code class="code">f1</code> is called for keys appearing only in <code class="code">m1</code>, 
+        <code class="code">f2</code> for keys appearing only in <code class="code">m2</code>, 
+        and <code class="code">f</code> for keys appearing in both maps.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALmap2zo"><span class="keyword">val</span> map2zo</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> 'a) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map2zo f1 f2 f m1 m2</code> is similar to <code class="code">map2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">map2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+        This is more efficient than <code class="code">map2o</code>, and equivalent if <code class="code">f</code> is
+        side-effect free and idem-potent (<code class="code">f k a a = a</code>).
+        The returned map has bindings for all keys appearing in either
+        <code class="code">m1</code> or <code class="code">m2</code>.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALiter2zo"><span class="keyword">val</span> iter2zo</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> unit) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> unit) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> unit) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">iter2zo f1 f2 f m1 m2</code> is similar to <code class="code">iter2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">iter2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+        This is more efficient than <code class="code">iter2o</code>, and equivalent if <code class="code">f</code> is
+        side-effect free.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfold2zo"><span class="keyword">val</span> fold2zo</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'b) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'b) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> 'b -> 'b) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info ">
+<code class="code">fold2zo f1 f2 f m1 m2 a</code> is similar to <code class="code">fold2o f1 f2 f m1 m2 a</code> but,
+        similary to <code class="code">fold2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+        This is more efficient than <code class="code">fold2o</code>, and equivalent if 
+        <code class="code">f k a a x = x</code> and has no side-effect.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALfor_all2zo"><span class="keyword">val</span> for_all2zo</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all2zo f1 f2 f m1 m2</code> is similar to <code class="code">for_all2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">for_all2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+        This is more efficient than <code class="code">for_all2o</code>, and equivalent if 
+        <code class="code">f k a a = true</code> and has no side-effect.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALexists2zo"><span class="keyword">val</span> exists2zo</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       (<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a -> bool) -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">exists2zo f1 f2 f m1 m2</code> is similar to <code class="code">exists2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">exists2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+        This is more efficient than <code class="code">exists2o</code>, and equivalent if 
+        <code class="code">f k a a = false</code> and has no side-effect.
+        The bindings are passed to <code class="code">f</code>, <code class="code">f1</code>, <code class="code">f2</code> in increasing order of keys.<br>
+</div>
+
+<pre><span id="VALmap_slice"><span class="keyword">val</span> map_slice</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'a) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map_slice f m k1 k2</code> is similar to <code class="code">map f m</code>, but only applies
+        <code class="code">f</code> to bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code> to construct the returned map. Bindings with
+        keys outside this range in <code class="code">m</code> are put unchanged in the result.
+        It is as if, outside this range, <code class="code">f k a = a</code> and has no effect.
+        The result has the same key set as <code class="code">m</code>.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys,
+        between <code class="code">k1</code> and <code class="code">k2</code>.<br>
+</div>
+
+<pre><span id="VALiter_slice"><span class="keyword">val</span> iter_slice</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> unit) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> unit</code></pre><div class="info ">
+<code class="code">iter_slice f m k1 k2</code> is similar to <code class="code">iter f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+        It is as if, outside this range, <code class="code">f k a</code> has no effect.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys,
+        between <code class="code">k1</code> and <code class="code">k2</code>.<br>
+</div>
+
+<pre><span id="VALfold_slice"><span class="keyword">val</span> fold_slice</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> 'b -> 'b) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> 'b -> 'b</code></pre><div class="info ">
+<code class="code">fold_slice f m k1 k2 a</code> is similar to <code class="code">fold f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+        It is as if, outside this range, <code class="code">f k a x = x</code> and has no effect.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys,
+        between <code class="code">k1</code> and <code class="code">k2</code>.<br>
+</div>
+
+<pre><span id="VALfor_all_slice"><span class="keyword">val</span> for_all_slice</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> bool</code></pre><div class="info ">
+<code class="code">for_all_slice f m k1 k2 a</code> is similar to <code class="code">for_all f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+        It is as if, outside this range, <code class="code">f k a = true</code> and has no effect.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys,
+        between <code class="code">k1</code> and <code class="code">k2</code>.<br>
+</div>
+
+<pre><span id="VALexists_slice"><span class="keyword">val</span> exists_slice</span> : <code class="type">(<a href="Mapext.S.html#TYPEkey">key</a> -> 'a -> bool) -><br>       'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> <a href="Mapext.S.html#TYPEkey">key</a> -> bool</code></pre><div class="info ">
+<code class="code">exists_slice f m k1 k2 a</code> is similar to <code class="code">exists f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+        It is as if, outside this range, <code class="code">f k a = false</code> and has no effect.
+        The bindings are passed to <code class="code">f</code> in increasing order of keys,
+        between <code class="code">k1</code> and <code class="code">k2</code>.<br>
+</div>
+
+<pre><span id="VALkey_equal"><span class="keyword">val</span> key_equal</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">key_equal m1 m2</code> returns true if <code class="code">m1</code> and <code class="code">m2</code> are defined
+        over exactly the same set of keys (but with possibly different
+        values).<br>
+</div>
+
+<pre><span id="VALkey_subset"><span class="keyword">val</span> key_subset</span> : <code class="type">'a <a href="Mapext.S.html#TYPEt">t</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">key_equal m1 m2</code> returns true if <code class="code">m1</code> is defined on a subset of
+        the keys of <code class="code">m2</code> (but with possibly different values).<br>
+</div>
+
+<pre><span id="VALfind_greater"><span class="keyword">val</span> find_greater</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+<code class="code">find_greater k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key strictly greater than <code class="code">k</code> and as small as possible.
+        Raises <code class="code">Not_found</code> if <code class="code">m</code> has no binding for a key strictly greater
+        than <code class="code">k</code>.<br>
+</div>
+
+<pre><span id="VALfind_less"><span class="keyword">val</span> find_less</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+<code class="code">find_less k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key strictly less than <code class="code">k</code> and as large as possible.
+        Raises <code class="code">Not_found</code> if <code class="code">m</code> has no binding for a key strictly less
+        than <code class="code">k</code>.<br>
+</div>
+
+<pre><span id="VALfind_greater_equal"><span class="keyword">val</span> find_greater_equal</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+<code class="code">find_greater_euql k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key greater or equal to <code class="code">k</code> and as small as possible.
+        Raises <code class="code">Not_found</code> if <code class="code">m</code> has no binding for a key greater or equal
+        to <code class="code">k</code>.<br>
+</div>
+
+<pre><span id="VALfind_less_equal"><span class="keyword">val</span> find_less_equal</span> : <code class="type"><a href="Mapext.S.html#TYPEkey">key</a> -> 'a <a href="Mapext.S.html#TYPEt">t</a> -> <a href="Mapext.S.html#TYPEkey">key</a> * 'a</code></pre><div class="info ">
+<code class="code">find_less_equal k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key less or equal to <code class="code">k</code> and as large as possible.
+        Raises <code class="code">Not_found</code> if <code class="code">m</code> has no binding for a key less or equal
+        to <code class="code">k</code>.<br>
+</div>
+</body></html>

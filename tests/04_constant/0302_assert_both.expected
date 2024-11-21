@@ -1,0 +1,4 @@
+tests/04_constant/0302_assert_both.c:4.2-17: ERROR: assertion failure
+tests/04_constant/0302_assert_both.c:5.2-16: ERROR: assertion failure
+tests/04_constant/0302_assert_both.c:6.2-11: [ x in ⊤ ]
+analysis ended

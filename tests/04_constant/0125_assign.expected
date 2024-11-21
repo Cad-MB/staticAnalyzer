@@ -1,0 +1,2 @@
+tests/04_constant/0125_assign.c:8.2-11: [ z in ⊤ ]
+analysis ended

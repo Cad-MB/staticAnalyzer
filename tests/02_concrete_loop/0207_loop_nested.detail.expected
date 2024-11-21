@@ -1,0 +1,82 @@
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:4.2-8: { [i=0;j=0;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:5.2-8: { [i=0;j=0;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:8.6-16: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.18-9.5: { [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:7.4-9.5: { [i=0;j=0;]; [i=1;j=1;]; [i=2;j=2;]; [i=3;j=3;]; [i=4;j=4;]; [i=5;j=5;]; [i=6;j=6;]; [i=7;j=7;]; [i=8;j=8;]; [i=9;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:10.4-14: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.17-11.3: { [i=1;j=0;]; [i=2;j=1;]; [i=3;j=2;]; [i=4;j=3;]; [i=5;j=4;]; [i=6;j=5;]; [i=7;j=6;]; [i=8;j=7;]; [i=9;j=8;]; [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:6.2-11.3: { [i=10;j=9;]; }
+tests/02_concrete_loop/0207_loop_nested.c:12.2-12: { [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:12.2-12: { [i=10;j=9;]; }
+stat trace: tests/02_concrete_loop/0207_loop_nested.c:1.0-13.1: { []; }
+analysis ended

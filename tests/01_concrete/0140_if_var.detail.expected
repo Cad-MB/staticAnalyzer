@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0140_if_var.c:3.2-17: { [x=-2;]; [x=-1;]; [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/01_concrete/0140_if_var.c:4.13-20: { [x=-1;]; [x=0;]; [x=1;]; [x=2;]; }
+stat trace: tests/01_concrete/0140_if_var.c:4.2-20: { [x=-1;]; [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+tests/01_concrete/0140_if_var.c:5.2-11: { [x=-1;]; [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/01_concrete/0140_if_var.c:5.2-11: { [x=-1;]; [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/01_concrete/0140_if_var.c:1.0-6.1: { []; }
+analysis ended

@@ -1,0 +1,4 @@
+tests/12_interval_loop/0307_loop_rel.c:7.4-15: [ x in [0;0], N in [1;10] ]
+tests/12_interval_loop/0307_loop_rel.c:7.4-15: [ x in [0;9], N in [1;10] ]
+tests/12_interval_loop/0307_loop_rel.c:10.2-24: ERROR: assertion failure
+analysis ended

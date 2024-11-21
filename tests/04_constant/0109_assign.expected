@@ -1,0 +1,2 @@
+tests/04_constant/0109_assign.c:4.2-11: [ x in {4} ]
+analysis ended

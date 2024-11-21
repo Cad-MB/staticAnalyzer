@@ -1,0 +1,3 @@
+tests/04_constant/0201_loop.c:5.4-13: [ x in {0} ]
+tests/04_constant/0201_loop.c:5.4-13: [ x in ⊤ ]
+analysis ended

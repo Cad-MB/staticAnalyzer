@@ -1,0 +1,2 @@
+tests/01_concrete/0152_cmp_rel.c:6.17-26: { [y=15;]; [y=16;]; [y=17;]; [y=18;]; }
+analysis ended

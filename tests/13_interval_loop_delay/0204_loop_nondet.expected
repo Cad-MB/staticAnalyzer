@@ -1,0 +1,6 @@
+tests/13_interval_loop_delay/0204_loop_nondet.c:5.4-13: [ x in [0;0] ]
+tests/13_interval_loop_delay/0204_loop_nondet.c:5.4-13: [ x in [0;1] ]
+tests/13_interval_loop_delay/0204_loop_nondet.c:5.4-13: [ x in [0;2] ]
+tests/13_interval_loop_delay/0204_loop_nondet.c:5.4-13: [ x in [0;3] ]
+tests/13_interval_loop_delay/0204_loop_nondet.c:5.4-13: [ x in [0;+∞] ]
+analysis ended

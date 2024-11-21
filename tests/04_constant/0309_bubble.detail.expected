@@ -1,0 +1,485 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand 0 10 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:16.2-17: [ B in {0}, J in {0}, N in ⊤, T in {0} ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:18.2-8: [ B in ⊤, J in {0}, N in ⊤, T in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ >= {1} ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:20.4-10: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0309_bubble.c:21.4-10: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} > {1} ~> ⊥, ⊥
+-- DEBUG: {1} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} <= {1} ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:25.6-31: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {2} > ⊤ ~> {2}, ⊤
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {1} > {2} ~> ⊥, ⊥
+-- DEBUG: {1} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {2} <= ⊤ ~> {2}, ⊤
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {1} <= {2} ~> {1}, {2}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:26.6-39: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:31.8-14: [ B in ⊤, J in {1}, N in ⊤, T in {1} ]
+stat trace: tests/04_constant/0309_bubble.c:29.24-32.7: [ B in ⊤, J in {1}, N in ⊤, T in {1} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {1} ⊔ {0} ~> ⊤
+stat trace: tests/04_constant/0309_bubble.c:29.6-32.7: [ B in ⊤, J in {1}, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+stat trace: tests/04_constant/0309_bubble.c:34.6-16: [ B in ⊤, J in {2}, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:22.21-35.5: [ B in ⊤, J in {2}, N in ⊤, T in ⊤ ]
+-- DEBUG: {1} ⊔ {2} ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {1} ~> false
+-- DEBUG: {1} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:25.6-31: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:26.6-39: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:31.8-14: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:29.24-32.7: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0309_bubble.c:29.6-32.7: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:34.6-16: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:22.21-35.5: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: {1} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:22.4-35.5: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:36.4-10: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:19.17-37.3: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ >= {1} ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:20.4-10: [ B in ⊤, J in {1}, N in ⊤, T in ⊤ ]
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0309_bubble.c:21.4-10: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} > {1} ~> ⊥, ⊥
+-- DEBUG: {1} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} <= {1} ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:25.6-31: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {2} > ⊤ ~> {2}, ⊤
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {1} > {2} ~> ⊥, ⊥
+-- DEBUG: {1} ⊓ ⊥ ~> ⊥
+-- DEBUG: is_bottom ⊥ ~> true
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {2} <= ⊤ ~> {2}, ⊤
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: {1} <= {2} ~> {1}, {2}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} + {1} (bwd from {2}) ~> {1}, {1}
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:26.6-39: [ B in ⊤, J in {1}, N in ⊤, T in {0} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:31.8-14: [ B in ⊤, J in {1}, N in ⊤, T in {1} ]
+stat trace: tests/04_constant/0309_bubble.c:29.24-32.7: [ B in ⊤, J in {1}, N in ⊤, T in {1} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {1} ⊔ {0} ~> ⊤
+stat trace: tests/04_constant/0309_bubble.c:29.6-32.7: [ B in ⊤, J in {1}, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} + {1} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+stat trace: tests/04_constant/0309_bubble.c:34.6-16: [ B in ⊤, J in {2}, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:22.21-35.5: [ B in ⊤, J in {2}, N in ⊤, T in ⊤ ]
+-- DEBUG: {1} ⊔ {2} ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {1} ~> false
+-- DEBUG: {1} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:25.6-31: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: {1} > ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: {1} <= ⊤ ~> {1}, ⊤
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: ⊤ + {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:26.6-39: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ == {0} ~> {0}, {0}
+-- DEBUG: ⊤ ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:31.8-14: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:29.24-32.7: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: ⊤ != {0} ~> ⊤, {0}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} ⊓ {0} ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0309_bubble.c:29.6-32.7: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ + {1} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:34.6-16: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:22.21-35.5: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: {1} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ - {1} ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - {1} (bwd from ⊤) ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:22.4-35.5: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0309_bubble.c:36.4-10: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:19.17-37.3: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ < {1} ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0309_bubble.c:19.2-37.3: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+tests/04_constant/0309_bubble.c:38.2-12: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:38.2-12: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+stat trace: tests/04_constant/0309_bubble.c:10.0-39.1: [ ]
+analysis ended

@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0125_assign.c:5.2-16: { [x=1;y=0;z=0;]; [x=2;y=0;z=0;]; [x=3;y=0;z=0;]; }
+stat trace: tests/01_concrete/0125_assign.c:6.2-16: { [x=1;y=2;z=0;]; [x=1;y=3;z=0;]; [x=1;y=4;z=0;]; [x=1;y=5;z=0;]; [x=2;y=2;z=0;]; [x=2;y=3;z=0;]; [x=2;y=4;z=0;]; [x=2;y=5;z=0;]; [x=3;y=2;z=0;]; [x=3;y=3;z=0;]; [x=3;y=4;z=0;]; [x=3;y=5;z=0;]; }
+stat trace: tests/01_concrete/0125_assign.c:7.2-16: { [x=1;y=2;z=5;]; [x=1;y=3;z=7;]; [x=1;y=4;z=9;]; [x=1;y=5;z=11;]; [x=2;y=2;z=6;]; [x=2;y=3;z=8;]; [x=2;y=4;z=10;]; [x=2;y=5;z=12;]; [x=3;y=2;z=7;]; [x=3;y=3;z=9;]; [x=3;y=4;z=11;]; [x=3;y=5;z=13;]; }
+tests/01_concrete/0125_assign.c:8.2-11: { [z=5;]; [z=7;]; [z=9;]; [z=11;]; [z=6;]; [z=8;]; [z=10;]; [z=12;]; [z=7;]; [z=9;]; [z=11;]; [z=13;]; }
+stat trace: tests/01_concrete/0125_assign.c:8.2-11: { [x=1;y=2;z=5;]; [x=1;y=3;z=7;]; [x=1;y=4;z=9;]; [x=1;y=5;z=11;]; [x=2;y=2;z=6;]; [x=2;y=3;z=8;]; [x=2;y=4;z=10;]; [x=2;y=5;z=12;]; [x=3;y=2;z=7;]; [x=3;y=3;z=9;]; [x=3;y=4;z=11;]; [x=3;y=5;z=13;]; }
+stat trace: tests/01_concrete/0125_assign.c:1.0-9.1: { []; }
+analysis ended

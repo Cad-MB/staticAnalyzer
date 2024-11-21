@@ -1,0 +1,7 @@
+stat trace: tests/01_concrete/0106_init.c:3.2-9: { [x=12;]; }
+stat trace: tests/01_concrete/0106_init.c:1.0-4.1: { []; }
+stat trace: tests/01_concrete/0106_init.c:7.2-9: { [y=13;]; }
+tests/01_concrete/0106_init.c:8.2-12: { [y=13;]; }
+stat trace: tests/01_concrete/0106_init.c:8.2-12: { [y=13;]; }
+stat trace: tests/01_concrete/0106_init.c:5.0-9.1: { []; }
+analysis ended

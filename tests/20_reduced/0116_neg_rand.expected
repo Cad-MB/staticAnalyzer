@@ -1,0 +1,2 @@
+tests/20_reduced/0116_neg_rand.c:4.2-11: [ x in ⊤ ∧ [-15;-10] ]
+analysis ended

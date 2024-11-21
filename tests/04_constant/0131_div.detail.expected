@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 12 ~> {12}
+-- DEBUG: rand -1 1 ~> ⊤
+-- DEBUG: {12} / ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0131_div.c:3.2-22: [ x in ⊤ ]
+tests/04_constant/0131_div.c:4.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0131_div.c:4.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0131_div.c:1.0-5.1: [ ]
+analysis ended

@@ -1,0 +1,2 @@
+tests/13_interval_loop_delay/0208_loop_nested.c:12.2-12: [ i in [10;10], j in [0;9] ]
+analysis ended

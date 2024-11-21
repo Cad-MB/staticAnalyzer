@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: {2} + {2} ~> {4}
+-- DEBUG: is_bottom {4} ~> false
+stat trace: tests/04_constant/0109_assign.c:3.2-12: [ x in {4} ]
+tests/04_constant/0109_assign.c:4.2-11: [ x in {4} ]
+stat trace: tests/04_constant/0109_assign.c:4.2-11: [ x in {4} ]
+stat trace: tests/04_constant/0109_assign.c:1.0-5.1: [ ]
+analysis ended

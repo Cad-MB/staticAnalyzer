@@ -1,0 +1,2 @@
+tests/01_concrete/0124_mul_rand.c:5.2-11: { [x=0;]; }
+analysis ended

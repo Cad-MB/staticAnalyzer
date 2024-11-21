@@ -1,0 +1,2 @@
+tests/04_constant/0105_init.c:6.2-12: [ x in {2}, y in {1} ]
+analysis ended

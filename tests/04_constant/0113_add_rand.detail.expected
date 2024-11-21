@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand 1 3 ~> ⊤
+-- DEBUG: rand 2 3 ~> ⊤
+-- DEBUG: ⊤ + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0113_add_rand.c:3.2-28: [ x in ⊤ ]
+tests/04_constant/0113_add_rand.c:4.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0113_add_rand.c:4.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0113_add_rand.c:1.0-5.1: [ ]
+analysis ended

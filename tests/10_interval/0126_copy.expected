@@ -1,0 +1,2 @@
+tests/10_interval/0126_copy.c:7.4-13: [ y in [12;12] ]
+analysis ended

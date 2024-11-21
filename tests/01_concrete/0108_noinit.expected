@@ -1,0 +1,3 @@
+tests/01_concrete/0108_noinit.c:3.2-11: { [x=0;]; }
+tests/01_concrete/0108_noinit.c:5.2-11: { [x=2;]; }
+analysis ended

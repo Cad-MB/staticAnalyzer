@@ -1,0 +1,6 @@
+stat trace: tests/01_concrete/0124_mul_rand.c:3.2-17: { [x=-1;]; [x=0;]; [x=1;]; }
+stat trace: tests/01_concrete/0124_mul_rand.c:4.2-12: { [x=0;]; }
+tests/01_concrete/0124_mul_rand.c:5.2-11: { [x=0;]; }
+stat trace: tests/01_concrete/0124_mul_rand.c:5.2-11: { [x=0;]; }
+stat trace: tests/01_concrete/0124_mul_rand.c:1.0-6.1: { []; }
+analysis ended

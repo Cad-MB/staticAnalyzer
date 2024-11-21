@@ -1,0 +1,2 @@
+tests/02_concrete_loop/0207_loop_nested.c:12.2-12: { [i=10;j=9;]; }
+analysis ended

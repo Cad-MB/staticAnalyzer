@@ -1,0 +1,8 @@
+stat trace: tests/03_concrete_assert/0303_assert_both.c:3.2-18: { [x=-3;]; [x=-2;]; [x=-1;]; [x=0;]; [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+tests/03_concrete_assert/0303_assert_both.c:4.2-16: ERROR: assertion failure
+stat trace: tests/03_concrete_assert/0303_assert_both.c:4.2-16: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/03_concrete_assert/0303_assert_both.c:5.2-17: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+tests/03_concrete_assert/0303_assert_both.c:6.2-11: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/03_concrete_assert/0303_assert_both.c:6.2-11: { [x=1;]; [x=2;]; [x=3;]; [x=4;]; [x=5;]; }
+stat trace: tests/03_concrete_assert/0303_assert_both.c:1.0-7.1: { []; }
+analysis ended

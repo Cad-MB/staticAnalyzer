@@ -1,0 +1,10 @@
+stat trace: tests/01_concrete/0107_print.c:4.2-9: { [x=12;y=0;]; }
+stat trace: tests/01_concrete/0107_print.c:5.2-9: { [x=12;y=15;]; }
+tests/01_concrete/0107_print.c:6.2-13: { [x=12;y=15;]; }
+stat trace: tests/01_concrete/0107_print.c:6.2-13: { [x=12;y=15;]; }
+stat trace: tests/01_concrete/0107_print.c:7.2-8: { [x=0;y=15;]; }
+stat trace: tests/01_concrete/0107_print.c:8.2-8: { [x=0;y=9;]; }
+tests/01_concrete/0107_print.c:9.2-13: { [x=0;y=9;]; }
+stat trace: tests/01_concrete/0107_print.c:9.2-13: { [x=0;y=9;]; }
+stat trace: tests/01_concrete/0107_print.c:1.0-10.1: { []; }
+analysis ended

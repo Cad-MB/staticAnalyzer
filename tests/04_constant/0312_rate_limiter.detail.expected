@@ -1,0 +1,291 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:12.2-8: [ D in {0}, R in {0}, S in {0}, X in {0}, Y in {0} ]
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ == {1} ~> {1}, {1}
+-- DEBUG: ⊤ ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: rand -128 128 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:14.4-23: [ D in {0}, R in {0}, S in {0}, X in ⊤, Y in {0} ]
+-- DEBUG: rand 0 16 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:15.4-19: [ D in ⊤, R in {0}, S in {0}, X in ⊤, Y in {0} ]
+-- DEBUG: is_bottom {0} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:16.4-10: [ D in ⊤, R in {0}, S in {0}, X in ⊤, Y in {0} ]
+-- DEBUG: ⊤ - {0} ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:17.4-14: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in {0} ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:18.4-10: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:19.21-31: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {0} + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.21-31: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.9-31: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:19.4-20.31: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ > {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ < {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ <= {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ >= {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:22.4-34: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:13.23-23.3: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ {0} ~> {0}
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ == {1} ~> {1}, {1}
+-- DEBUG: ⊤ ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: rand -128 128 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:14.4-23: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: rand 0 16 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:15.4-19: [ D in ⊤, R in ⊤, S in {0}, X in ⊤, Y in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:16.4-10: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: ⊤ - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:17.4-14: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:18.4-10: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:19.21-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.21-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.9-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:19.4-20.31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ > {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ < {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ <= {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ >= {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:22.4-34: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:13.23-23.3: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: ⊤ ⊏ {0} ~> false
+-- DEBUG: {0} ▿ ⊤ ~> ⊤
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ == {1} ~> {1}, {1}
+-- DEBUG: ⊤ ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+-- DEBUG: rand -128 128 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:14.4-23: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: rand 0 16 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:15.4-19: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:16.4-10: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: ⊤ - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:17.4-14: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:18.4-10: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ <= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:19.21-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: ⊤ > ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - ⊤ (bwd from ⊤) ~> ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ >= ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ + ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.21-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: ⊤ < ⊤ ~> ⊤, ⊤
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:20.9-31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:19.4-20.31: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ > {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ < {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+tests/04_constant/0312_rate_limiter.c:22.4-34: ERROR: assertion failure
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: ⊤ <= {128} ~> ⊤, {128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+-- DEBUG: const 128 ~> {128}
+-- DEBUG: - {128} ~> {-128}
+-- DEBUG: ⊤ >= {-128} ~> ⊤, {-128}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: - {128} (bwd from {-128}) ~> {128}
+-- DEBUG: {128} ⊓ {128} ~> {128}
+-- DEBUG: is_bottom {128} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:22.4-34: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:13.23-23.3: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: {0} ⊔ ⊤ ~> ⊤
+-- DEBUG: rand 0 1 ~> ⊤
+-- DEBUG: const 1 ~> {1}
+-- DEBUG: ⊤ != {1} ~> ⊤, {1}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {1} ⊓ {1} ~> {1}
+-- DEBUG: is_bottom {1} ~> false
+stat trace: tests/04_constant/0312_rate_limiter.c:13.2-23.3: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+tests/04_constant/0312_rate_limiter.c:24.2-12: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:24.2-12: [ D in ⊤, R in ⊤, S in ⊤, X in ⊤, Y in ⊤ ]
+stat trace: tests/04_constant/0312_rate_limiter.c:5.0-25.1: [ ]
+analysis ended

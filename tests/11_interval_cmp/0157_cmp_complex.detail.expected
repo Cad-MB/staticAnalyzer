@@ -1,0 +1,39 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:5.2-8: [ x in [2;2], y in [0;0], z in [0;0] ]
+-- DEBUG: const 5 ~> [5;5]
+-- DEBUG: is_bottom [5;5] ~> false
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:6.2-8: [ x in [2;2], y in [5;5], z in [0;0] ]
+-- DEBUG: rand 0 10 ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:7.2-17: [ x in [2;2], y in [5;5], z in [0;10] ]
+-- DEBUG: [2;2] + [5;5] ~> [7;7]
+-- DEBUG: [0;10] == [7;7] ~> [7;7], [7;7]
+-- DEBUG: [0;10] ⊓ [7;7] ~> [7;7]
+-- DEBUG: is_bottom [7;7] ~> false
+-- DEBUG: [2;2] + [5;5] (bwd from [7;7]) ~> [2;2], [5;5]
+-- DEBUG: [2;2] ⊓ [2;2] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+-- DEBUG: [5;5] ⊓ [5;5] ~> [5;5]
+-- DEBUG: is_bottom [5;5] ~> false
+tests/11_interval_cmp/0157_cmp_complex.c:8.20-29: [ z in [7;7] ]
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:8.20-29: [ x in [2;2], y in [5;5], z in [7;7] ]
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:8.18-31: [ x in [2;2], y in [5;5], z in [7;7] ]
+-- DEBUG: [2;2] + [5;5] ~> [7;7]
+-- DEBUG: [0;10] != [7;7] ~> [0;10], [7;7]
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [2;2] + [5;5] (bwd from [7;7]) ~> [2;2], [5;5]
+-- DEBUG: [2;2] ⊓ [2;2] ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+-- DEBUG: [5;5] ⊓ [5;5] ~> [5;5]
+-- DEBUG: is_bottom [5;5] ~> false
+-- DEBUG: [2;2] ⊔ [2;2] ~> [2;2]
+-- DEBUG: [5;5] ⊔ [5;5] ~> [5;5]
+-- DEBUG: [7;7] ⊔ [0;10] ~> [0;10]
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:8.2-31: [ x in [2;2], y in [5;5], z in [0;10] ]
+stat trace: tests/11_interval_cmp/0157_cmp_complex.c:1.0-9.1: [ ]
+analysis ended

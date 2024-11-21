@@ -1,0 +1,24 @@
+-- DEBUG: const 0 ~> {0}
+-- DEBUG: rand -2 5 ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0140_if_var.c:3.2-17: [ x in ⊤ ]
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: ⊤ < {2} ~> ⊤, {2}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {2} ⊓ {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+-- DEBUG: - ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+stat trace: tests/04_constant/0140_if_var.c:4.13-20: [ x in ⊤ ]
+-- DEBUG: const 2 ~> {2}
+-- DEBUG: ⊤ >= {2} ~> ⊤, {2}
+-- DEBUG: ⊤ ⊓ ⊤ ~> ⊤
+-- DEBUG: is_bottom ⊤ ~> false
+-- DEBUG: {2} ⊓ {2} ~> {2}
+-- DEBUG: is_bottom {2} ~> false
+stat trace: tests/04_constant/0140_if_var.c:4.2-20: [ x in ⊤ ]
+tests/04_constant/0140_if_var.c:5.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0140_if_var.c:5.2-11: [ x in ⊤ ]
+stat trace: tests/04_constant/0140_if_var.c:1.0-6.1: [ ]
+analysis ended

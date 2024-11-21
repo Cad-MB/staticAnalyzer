@@ -1,0 +1,5 @@
+stat trace: tests/01_concrete/0115_neg.c:3.2-9: { [x=-9;]; }
+tests/01_concrete/0115_neg.c:4.2-11: { [x=-9;]; }
+stat trace: tests/01_concrete/0115_neg.c:4.2-11: { [x=-9;]; }
+stat trace: tests/01_concrete/0115_neg.c:1.0-5.1: { []; }
+analysis ended

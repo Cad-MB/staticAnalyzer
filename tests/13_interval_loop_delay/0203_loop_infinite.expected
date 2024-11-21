@@ -1,0 +1,6 @@
+tests/13_interval_loop_delay/0203_loop_infinite.c:5.4-13: [ x in [0;0] ]
+tests/13_interval_loop_delay/0203_loop_infinite.c:5.4-13: [ x in [-1;0] ]
+tests/13_interval_loop_delay/0203_loop_infinite.c:5.4-13: [ x in [-2;0] ]
+tests/13_interval_loop_delay/0203_loop_infinite.c:5.4-13: [ x in [-3;0] ]
+tests/13_interval_loop_delay/0203_loop_infinite.c:5.4-13: [ x in [-∞;0] ]
+analysis ended

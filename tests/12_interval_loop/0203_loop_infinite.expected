@@ -1,0 +1,3 @@
+tests/12_interval_loop/0203_loop_infinite.c:5.4-13: [ x in [0;0] ]
+tests/12_interval_loop/0203_loop_infinite.c:5.4-13: [ x in [-∞;0] ]
+analysis ended

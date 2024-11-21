@@ -1,0 +1,10 @@
+-- DEBUG: const 0 ~> even ∧ [0;0]
+tests/20_reduced/0108_noinit.c:3.2-11: [ x in even ∧ [0;0] ]
+stat trace: tests/20_reduced/0108_noinit.c:3.2-11: [ x in even ∧ [0;0] ]
+-- DEBUG: const 2 ~> even ∧ [2;2]
+-- DEBUG: is_bottom even ∧ [2;2] ~> false
+stat trace: tests/20_reduced/0108_noinit.c:4.2-8: [ x in even ∧ [2;2] ]
+tests/20_reduced/0108_noinit.c:5.2-11: [ x in even ∧ [2;2] ]
+stat trace: tests/20_reduced/0108_noinit.c:5.2-11: [ x in even ∧ [2;2] ]
+stat trace: tests/20_reduced/0108_noinit.c:1.0-6.1: [ ]
+analysis ended

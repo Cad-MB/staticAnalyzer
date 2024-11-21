@@ -1,0 +1,80 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/12_interval_loop/0206_loop_limit.c:4.2-8: [ N in [0;0], x in [0;0] ]
+-- DEBUG: rand 0 10 ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+stat trace: tests/12_interval_loop/0206_loop_limit.c:5.2-17: [ N in [0;10], x in [0;0] ]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] < [0;10] ~> [0;0], [1;10]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;0] + [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+stat trace: tests/12_interval_loop/0206_loop_limit.c:7.15-25: [ N in [1;10], x in [1;1] ]
+-- DEBUG: [0;0] >= [0;10] ~> [0;0], [0;0]
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;10] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [1;1] ⊔ [0;0] ~> [0;1]
+-- DEBUG: [1;10] ⊔ [0;0] ~> [0;10]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:7.4-25: [ N in [0;10], x in [0;1] ]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:6.23-8.3: [ N in [0;10], x in [0;1] ]
+-- DEBUG: [0;0] ⊔ [0;1] ~> [0;1]
+-- DEBUG: [0;10] ⊔ [0;10] ~> [0;10]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;1] ⊏ [0;0] ~> false
+-- DEBUG: [0;0] ▿ [0;1] ~> [0;+∞]
+-- DEBUG: [0;10] ▿ [0;10] ~> [0;10]
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] == [0;0] ~> [0;0], [0;0]
+-- DEBUG: [0;1] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+-- DEBUG: [0;+∞] < [0;10] ~> [0;9], [1;10]
+-- DEBUG: [0;+∞] ⊓ [0;9] ~> [0;9]
+-- DEBUG: is_bottom [0;9] ~> false
+-- DEBUG: [0;10] ⊓ [1;10] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+-- DEBUG: const 1 ~> [1;1]
+-- DEBUG: [0;9] + [1;1] ~> [1;10]
+-- DEBUG: is_bottom [1;10] ~> false
+stat trace: tests/12_interval_loop/0206_loop_limit.c:7.15-25: [ N in [1;10], x in [1;10] ]
+-- DEBUG: [0;+∞] >= [0;10] ~> [0;+∞], [0;10]
+-- DEBUG: [0;+∞] ⊓ [0;+∞] ~> [0;+∞]
+-- DEBUG: is_bottom [0;+∞] ~> false
+-- DEBUG: [0;10] ⊓ [0;10] ~> [0;10]
+-- DEBUG: is_bottom [0;10] ~> false
+-- DEBUG: [1;10] ⊔ [0;+∞] ~> [0;+∞]
+-- DEBUG: [1;10] ⊔ [0;10] ~> [0;10]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:7.4-25: [ N in [0;10], x in [0;+∞] ]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:6.23-8.3: [ N in [0;10], x in [0;+∞] ]
+-- DEBUG: [0;0] ⊔ [0;+∞] ~> [0;+∞]
+-- DEBUG: [0;10] ⊔ [0;10] ~> [0;10]
+-- DEBUG: [0;10] ⊏ [0;10] ~> true
+-- DEBUG: [0;+∞] ⊏ [0;+∞] ~> true
+-- DEBUG: rand 0 1 ~> [0;1]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: [0;1] != [0;0] ~> [1;1], [0;0]
+-- DEBUG: [0;1] ⊓ [1;1] ~> [1;1]
+-- DEBUG: is_bottom [1;1] ~> false
+-- DEBUG: [0;0] ⊓ [0;0] ~> [0;0]
+-- DEBUG: is_bottom [0;0] ~> false
+stat trace: tests/12_interval_loop/0206_loop_limit.c:6.2-8.3: [ N in [0;10], x in [0;+∞] ]
+tests/12_interval_loop/0206_loop_limit.c:9.2-11: [ x in [0;+∞] ]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:9.2-11: [ N in [0;10], x in [0;+∞] ]
+stat trace: tests/12_interval_loop/0206_loop_limit.c:1.0-10.1: [ ]
+analysis ended

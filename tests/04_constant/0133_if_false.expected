@@ -1,0 +1,2 @@
+tests/04_constant/0133_if_false.c:5.2-11: [ x in {0} ]
+analysis ended

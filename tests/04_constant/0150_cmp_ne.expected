@@ -1,0 +1,2 @@
+tests/04_constant/0150_cmp_ne.c:6.14-25: [ x in ⊤, y in {10} ]
+analysis ended

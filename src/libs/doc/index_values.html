@@ -1,0 +1,381 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Mapext" rel="Chapter" href="Mapext.html"><title>Index of values</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of values</h1>
+<table>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="Mapext.S.html#VALadd">add</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">add x y m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, plus a binding of <code class="code">x</code> to <code class="code">y</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Mapext.S.html#VALbindings">bindings</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Return the list of all bindings of the given map.
+</div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Mapext.S.html#VALcardinal">cardinal</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Return the number of bindings of a map.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALchoose">choose</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Return one binding of the given map, or raise <code class="code">Not_found</code> if
+       the map is empty.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.OrderedType.html#VALcompare">compare</a> [<a href="Mapext.OrderedType.html">Mapext.OrderedType</a>]</td>
+<td><div class="info">
+A total ordering function over the keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALcompare">compare</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Total ordering between maps.
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Mapext.S.html#VALempty">empty</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+The empty map.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALequal">equal</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">equal cmp m1 m2</code> tests whether the maps <code class="code">m1</code> and <code class="code">m2</code> are
+       equal, that is, contain equal keys and associate them with
+       equal data.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALexists">exists</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Mapext.S.html#VALexists2">exists2</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">exists2 f m1 m2</code> is similar to <code class="code">exists</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALexists2o">exists2o</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fexists2o f1 f2 f m1 m2</code> is similar to <code class="code">fexists2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALexists2z">exists2z</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">exists2z f m1 m2</code> is similar to <code class="code">exists2 f m1 m2</code>, but returns
+        <code class="code">false</code> for physically equal subtrees without traversing them.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALexists2zo">exists2zo</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">exists2zo f1 f2 f m1 m2</code> is similar to <code class="code">exists2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">exists2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALexists_slice">exists_slice</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">exists_slice f m k1 k2 a</code> is similar to <code class="code">exists f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Mapext.S.html#VALfilter">filter</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Mapext.S.html#VALfind">find</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">find x m</code> returns the current binding of <code class="code">x</code> in <code class="code">m</code>,
+       or raises <code class="code">Not_found</code> if no such binding exists.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfind_greater">find_greater</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">find_greater k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key strictly greater than <code class="code">k</code> and as small as possible.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfind_greater_equal">find_greater_equal</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">find_greater_euql k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key greater or equal to <code class="code">k</code> and as small as possible.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfind_less">find_less</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">find_less k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key strictly less than <code class="code">k</code> and as large as possible.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfind_less_equal">find_less_equal</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">find_less_equal k m</code> returns the binding (key and value) in <code class="code">m</code>
+        with key less or equal to <code class="code">k</code> and as large as possible.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold">fold</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold f m a</code> computes <code class="code">(f kN dN ... (f k1 d1 a)...)</code>,
+       where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">m</code>
+       (in increasing order), and <code class="code">d1 ... dN</code> are the associated data.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold2">fold2</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold2 f m1 m2 x</code> is similar to <code class="code">fold</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold2o">fold2o</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold2o f1 f2 f m1 m2 a</code> is similar to <code class="code">fold2 f m1 m2 a</code>, but 
+        accepts maps defined over different sets of keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold2z">fold2z</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold2z f m1 m2 a</code> is similar to <code class="code">fold2 f m1 m2 a</code>, but physically
+        equal subtrees are ignored.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold2zo">fold2zo</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold2zo f1 f2 f m1 m2 a</code> is similar to <code class="code">fold2o f1 f2 f m1 m2 a</code> but,
+        similary to <code class="code">fold2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfold_slice">fold_slice</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">fold_slice f m k1 k2 a</code> is similar to <code class="code">fold f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all">for_all</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all2">for_all2</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">for_all2 f m1 m2</code> is similar to <code class="code">for_all</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all2o">for_all2o</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">for_all2o f1 f2 f m1 m2</code> is similar to <code class="code">for_all2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all2z">for_all2z</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">for_all2z f m1 m2</code> is similar to <code class="code">for_all2 f m1 m2</code>, but returns
+        <code class="code">true</code> for physically equal subtrees without traversing them.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all2zo">for_all2zo</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">for_all2zo f1 f2 f m1 m2</code> is similar to <code class="code">for_all2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">for_all2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALfor_all_slice">for_all_slice</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">for_all_slice f m k1 k2 a</code> is similar to <code class="code">for_all f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="Mapext.S.html#VALis_empty">is_empty</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Test whether a map is empty or not.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter">iter</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter f m</code> applies <code class="code">f</code> to all bindings in map <code class="code">m</code>.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter2">iter2</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter2 f m1 m2</code> is similar to <code class="code">map</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter2o">iter2o</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter2o f1 f2 f m1 m2</code> is similar to <code class="code">iter2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter2z">iter2z</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter2z f m1 m2</code> is similar to <code class="code">iter2 f m1 m2</code>, but physically
+        equal subtrees are ignored.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter2zo">iter2zo</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter2zo f1 f2 f m1 m2</code> is similar to <code class="code">iter2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">iter2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALiter_slice">iter_slice</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">iter_slice f m k1 k2</code> is similar to <code class="code">iter f m</code>, but only calls
+        <code class="code">f</code> on bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>K</td></tr>
+<tr><td><a href="Mapext.S.html#VALkey_equal">key_equal</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">key_equal m1 m2</code> returns true if <code class="code">m1</code> and <code class="code">m2</code> are defined
+        over exactly the same set of keys (but with possibly different
+        values).
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALkey_subset">key_subset</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">key_equal m1 m2</code> returns true if <code class="code">m1</code> is defined on a subset of
+        the keys of <code class="code">m2</code> (but with possibly different values).
+</div>
+</td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap">map</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map f m</code> returns a map with same domain as <code class="code">m</code>, where the
+       associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
+       replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap2">map2</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map2 f m1 m2</code> is similar to <code class="code">map</code> but applies <code class="code">f</code> to pairs
+       of bindings <code class="code">a1</code> from <code class="code">m1</code> and <code class="code">a2</code> from <code class="code">m2</code> corresponding to
+       the same key to construct a new map with the same key set.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap2o">map2o</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map2o f1 f2 f m1 m2</code> is similar to <code class="code">map2 f m1 m2</code>, but 
+        accepts maps defined over different sets of keys.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap2z">map2z</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map2z f m1 m2</code> is similar to <code class="code">map2 f m1 m2</code>, but physically
+        equal subtrees are put unchanged into the result instead of
+        being traversed.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap2zo">map2zo</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map2zo f1 f2 f m1 m2</code> is similar to <code class="code">map2o f1 f2 f m1 m2</code> but,
+        similary to <code class="code">map2z</code>, <code class="code">f</code> is not called on physically equal
+        subtrees.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmap_slice">map_slice</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">map_slice f m k1 k2</code> is similar to <code class="code">map f m</code>, but only applies
+        <code class="code">f</code> to bindings with key greater or equal to <code class="code">k1</code> and smaller
+        or equal to <code class="code">k2</code> to construct the returned map.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmapi">mapi</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Same as <code class="code">Map.S.map</code>, but the function receives as arguments both the
+       key and the associated value for each binding of the map.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmax_binding">max_binding</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Same as <code class="code">Map.S.min_binding</code>, but returns the largest binding
+        of the given map.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmem">mem</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">mem x m</code> returns <code class="code">true</code> if <code class="code">m</code> contains a binding for <code class="code">x</code>,
+       and <code class="code">false</code> otherwise.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmerge">merge</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">merge f m1 m2</code> computes a map whose keys is a subset of keys of <code class="code">m1</code>
+        and of <code class="code">m2</code>.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALmin_binding">min_binding</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+Return the smallest binding of the given map
+       (with respect to the <code class="code">Ord.compare</code> ordering), or raise
+       <code class="code">Not_found</code> if the map is empty.
+</div>
+</td></tr>
+<tr><td align="left"><br>O</td></tr>
+<tr><td><a href="Mapext.S.html#VALof_list">of_list</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">of_list l</code> converts an association list to a map.
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Mapext.S.html#VALpartition">partition</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">partition p m</code> returns a pair of maps <code class="code">(m1, m2)</code>, where
+        <code class="code">m1</code> contains all the bindings of <code class="code">s</code> that satisfy the
+        predicate <code class="code">p</code>, and <code class="code">m2</code> is the map with all the bindings of
+        <code class="code">s</code> that do not satisfy <code class="code">p</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>R</td></tr>
+<tr><td><a href="Mapext.S.html#VALremove">remove</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">remove x m</code> returns a map containing the same bindings as
+       <code class="code">m</code>, except for <code class="code">x</code> which is unbound in the returned map.
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Mapext.S.html#VALsingleton">singleton</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">singleton x y</code> returns the one-element map that contains a binding <code class="code">y</code>
+        for <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Mapext.S.html#VALsplit">split</a> [<a href="Mapext.S.html">Mapext.S</a>]</td>
+<td><div class="info">
+<code class="code">split x m</code> returns a triple <code class="code">(l, data, r)</code>, where
+          <code class="code">l</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly less than <code class="code">x</code>;
+          <code class="code">r</code> is the map with all the bindings of <code class="code">m</code> whose key
+        is strictly greater than <code class="code">x</code>;
+          <code class="code">data</code> is <code class="code">None</code> if <code class="code">m</code> contains no binding for <code class="code">x</code>,
+          or <code class="code">Some v</code> if <code class="code">m</code> binds <code class="code">v</code> to <code class="code">x</code>.
+</div>
+</td></tr>
+</table>
+</body>
+</html>

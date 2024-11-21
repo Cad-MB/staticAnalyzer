@@ -1,0 +1,27 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: rand -4 3 ~> [-4;3]
+-- DEBUG: is_bottom [-4;3] ~> false
+stat trace: tests/10_interval/0141_if_rel.c:4.2-17: [ x in [-4;3], y in [0;0] ]
+-- DEBUG: rand -3 4 ~> [-3;4]
+-- DEBUG: is_bottom [-3;4] ~> false
+stat trace: tests/10_interval/0141_if_rel.c:5.2-17: [ x in [-4;3], y in [-3;4] ]
+-- DEBUG: [-4;3] >= [-3;4] ~> [-3;3], [-3;3]
+-- DEBUG: [-4;3] ⊓ [-3;3] ~> [-3;3]
+-- DEBUG: is_bottom [-3;3] ~> false
+-- DEBUG: [-3;4] ⊓ [-3;3] ~> [-3;3]
+-- DEBUG: is_bottom [-3;3] ~> false
+-- DEBUG: is_bottom [-3;3] ~> false
+stat trace: tests/10_interval/0141_if_rel.c:6.14-20: [ x in [-3;3], y in [-3;3] ]
+-- DEBUG: [-4;3] < [-3;4] ~> [-4;3], [-3;4]
+-- DEBUG: [-4;3] ⊓ [-4;3] ~> [-4;3]
+-- DEBUG: is_bottom [-4;3] ~> false
+-- DEBUG: [-3;4] ⊓ [-3;4] ~> [-3;4]
+-- DEBUG: is_bottom [-3;4] ~> false
+-- DEBUG: [-3;3] ⊔ [-4;3] ~> [-4;3]
+-- DEBUG: [-3;3] ⊔ [-3;4] ~> [-3;4]
+stat trace: tests/10_interval/0141_if_rel.c:6.2-20: [ x in [-4;3], y in [-3;4] ]
+tests/10_interval/0141_if_rel.c:7.2-13: [ x in [-4;3], y in [-3;4] ]
+stat trace: tests/10_interval/0141_if_rel.c:7.2-13: [ x in [-4;3], y in [-3;4] ]
+stat trace: tests/10_interval/0141_if_rel.c:1.0-8.1: [ ]
+analysis ended

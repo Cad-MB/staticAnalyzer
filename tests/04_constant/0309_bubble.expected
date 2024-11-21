@@ -1,0 +1,10 @@
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:25.6-31: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:26.6-39: ERROR: assertion failure
+tests/04_constant/0309_bubble.c:38.2-12: [ B in ⊤, J in ⊤, N in ⊤, T in ⊤ ]
+analysis ended

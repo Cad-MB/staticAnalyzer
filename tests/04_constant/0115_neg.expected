@@ -1,0 +1,2 @@
+tests/04_constant/0115_neg.c:4.2-11: [ x in {-9} ]
+analysis ended

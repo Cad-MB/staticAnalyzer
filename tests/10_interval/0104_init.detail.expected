@@ -1,0 +1,8 @@
+-- DEBUG: const 0 ~> [0;0]
+-- DEBUG: const 2 ~> [2;2]
+-- DEBUG: is_bottom [2;2] ~> false
+stat trace: tests/10_interval/0104_init.c:3.2-8: [ x in [2;2] ]
+tests/10_interval/0104_init.c:4.2-12: [ x in [2;2] ]
+stat trace: tests/10_interval/0104_init.c:4.2-12: [ x in [2;2] ]
+stat trace: tests/10_interval/0104_init.c:1.0-5.1: [ ]
+analysis ended

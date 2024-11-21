@@ -1,0 +1,2 @@
+tests/04_constant/0207_loop_nested.c:12.2-12: [ i in ⊤, j in ⊤ ]
+analysis ended

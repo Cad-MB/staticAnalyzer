@@ -1,0 +1,2 @@
+tests/04_constant/0145_cmp_ge.c:6.14-25: [ x in ⊤, y in ⊤ ]
+analysis ended

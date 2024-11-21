@@ -1,0 +1,2 @@
+tests/01_concrete/0131_div.c:4.2-11: { [x=-12;]; [x=12;]; }
+analysis ended

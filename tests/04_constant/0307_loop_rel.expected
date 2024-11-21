@@ -1,0 +1,4 @@
+tests/04_constant/0307_loop_rel.c:7.4-15: [ x in {0}, N in ⊤ ]
+tests/04_constant/0307_loop_rel.c:7.4-15: [ x in ⊤, N in ⊤ ]
+tests/04_constant/0307_loop_rel.c:10.2-24: ERROR: assertion failure
+analysis ended

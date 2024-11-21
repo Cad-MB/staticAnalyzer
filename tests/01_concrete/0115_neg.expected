@@ -1,0 +1,2 @@
+tests/01_concrete/0115_neg.c:4.2-11: { [x=-9;]; }
+analysis ended
