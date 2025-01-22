@@ -73,7 +73,13 @@ module Constants = (struct
 
   let sub = lift2 Z.sub
 
-  let mul = lift2 Z.mul
+  let mul x y =
+    match x, y with
+    | BOT, _ | _, BOT -> BOT  (* propagation du ⊥ *)
+    | Cst z, _ when Z.equal z Z.zero -> Cst Z.zero  (* x = 0, donc x * y = 0 *)
+    | _, Cst z when Z.equal z Z.zero -> Cst Z.zero  (* y = 0, donc x * y = 0 *)
+    | Cst a, Cst b -> Cst (Z.mul a b)  (* cas normal *)
+    | _ -> TOP  (* si x ou y est TOP, on ne peut pas conclure *)  
 
   let div a b =
     if b = Cst Z.zero then BOT
@@ -99,18 +105,25 @@ module Constants = (struct
 
   (* comparison operations (filters) *)
 
-  let eq a b =
-    (* this is not very precise, how can we improve it ? *)
-    a, b
+  let eq a b = match a, b with
+  | Cst x, Cst y when x = y -> a, b  (* si x == y, on garde *)
+  | Cst x, TOP -> Cst x, Cst x  (* si x == ⊤, b prend la val x *)
+  | TOP, Cst y -> Cst y, Cst y  (* si ⊤ == y, a prend la val y *)
+  | _, _ -> a, b  (* sinon, aucune info *)
 
-  let neq a b =
-    a, b
+  let neq a b = match a, b with
+  | Cst x, Cst y when x = y -> BOT, BOT (* contradiction *)
+  | _ -> a, b
 
-  let geq a b =
-    a, b
-
-  let gt a b =
-    a, b
+  let geq a b = match a, b with
+  | Cst x, Cst y when x >= y -> a, b  (* x ≥ y *)
+  | Cst x, Cst y when x < y -> BOT, BOT  (* contradiction *)
+  | _ -> a, b
+  
+  let gt a b = match a, b with
+  | Cst x, Cst y when x > y -> a, b  (* x > y *)
+  | Cst x, Cst y when x <= y -> BOT, BOT  (* contradiction *)
+  | _ -> a, b  
 
 
   (* subset inclusion of concretizations *)
