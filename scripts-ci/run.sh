@@ -209,7 +209,7 @@ function run_test {
 
     run_test_dir "tests/01_concrete" "-concrete"
     run_test_dir "tests/02_concrete_loop" "-concrete"
-    #run_test_dir "tests/03_concrete_assert" "-concrete"
+    run_test_dir "tests/03_concrete_assert" "-concrete"
     #run_test_dir "tests/04_constant" "-constant"
     #run_test_dir "tests/10_interval" "-interval"
     #run_test_dir "tests/11_interval_cmp" "-interval"
