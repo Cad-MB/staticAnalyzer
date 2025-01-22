@@ -13,6 +13,11 @@ module ConstantAnalysis =
     (Non_relational_domain.NonRelational
        (Constant_domain.Constants))
 
+module IntervalAnalysis =
+  Interpreter.Interprete
+    (Non_relational_domain.NonRelational
+       (Interval_domain.Intervals))
+
 (* parse and print filename *)
 let doit filename =
   let prog = File_parser.parse_file filename in
@@ -45,6 +50,10 @@ let main () =
      "-constant",
      Arg.Unit (fun () -> action := ConstantAnalysis.eval_prog),
      "Use the constant abstract domain";
+
+     "-interval",
+      Arg.Unit (fun () -> action := IntervalAnalysis.eval_prog),
+      "Use the interval abstract domain";
 
      (* options to add *)
      (* -interval *)
