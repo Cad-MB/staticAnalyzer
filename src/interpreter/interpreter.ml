@@ -24,6 +24,8 @@ open Domain
 let trace = ref false
 
 
+let wide_delay = ref 0
+let unroll = ref 0 
 
 (* utilities *)
 (* ********* *)
@@ -147,44 +149,37 @@ module Interprete(D : DOMAIN) =
         D.join t f
 
     | AST_while (e,s) ->
-        (* simple fixpoint *)
-        let rec fix (f:t -> t) (x:t) : t =
+      let rec fix (f : t -> t) (x : t) (d : int) (u : int) : t =
+        if u > 0 then
+          let fx = eval_stat (filter x e true) s in
+          fix f fx d (u - 1)
+        else if d > 0 then
           let fx = f x in
-          if D.subset fx x then fx
-          else fix f fx
-        in
-        (* function to accumulate one more loop iteration:
-           F(X(n+1)) = X(0) U body(F(X(n))
-           we apply the loop body and add back the initial abstract state
-         *)
-        let f x = D.join a (eval_stat (filter x e true) s) in
-        (* compute fixpoint from the initial state (i.e., a loop invariant) *)
-        let inv = fix f a in
-        (* and then filter by exit condition *)
-        filter inv e false
+          if D.subset fx x then x
+          else fix f fx (d - 1) 0
+        else
+          let fx = f x in
+          if D.subset fx x then x
+          else fix f (D.widen x fx) 0 0
+      in
+      let f x = D.join x (eval_stat (filter x e true) s) in
+      let inv = fix f a !wide_delay !unroll in
+      filter inv e false
 
     | AST_assert e ->
-    (* vérifier si l'assertion peut être fausse *)
-    let a_true = filter a e true in
-    let a_false = filter a e false in
-    if not (D.subset a_false (D.bottom ())) then
-      error ext "assertion failure";
-    (* continuer avec l'état filtré par l'assertion *)
-    a_true
+      let res = filter a e false in
+      if not (D.is_bottom res) then error ext "assertion failure";
+      filter a e true       
 
     | AST_print l ->
-        (* print the current abstract environment *)
         let l' = List.map fst l in
         Format.printf "%s: %a@\n"
           (string_of_extent ext) (fun fmt v -> D.print fmt a v) l';
-        (* then, return the original element unchanged *)
         a
 
     | AST_PRINT_ALL ->
-        (* print the current abstract environment for all variables *)
         Format.printf "%s: %a@\n"
           (string_of_extent ext) D.print_all a;
-        (* then, return the original element unchanged *)
         a
 
     | AST_HALT ->

@@ -137,9 +137,15 @@ module IntervalDomain = struct
     match x, y with
     | EmptySet, b | b, EmptySet -> b
     | Range(l1, u1), Range(l2, u2) ->
-      let l = if compare_bounds l2 l1 < 0 then NegInf else l1 in
-      let u = if compare_bounds u2 u1 > 0 then PosInf else u1 in
-      Range(l, u)
+      let l =
+        if compare_bounds l2 l1 < 0 then NegInf
+        else l1
+      in
+      let u =
+        if compare_bounds u2 u1 > 0 then PosInf
+        else u1
+      in
+      Range(l, u)  
 
   let unary v op =
     match op with
