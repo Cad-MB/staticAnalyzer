@@ -67,7 +67,7 @@ module IntervalDomain = struct
     | Range(l1, u1), Range(l2, u2) ->
       let vals = [op l1 l2; op l1 u2; op u1 l2; op u1 u2] in
       create
-        (List.fold_left min_bound PosInf  vals)
+        (List.fold_left min_bound PosInf vals)
         (List.fold_left max_bound NegInf vals)
 
   let add =
@@ -89,7 +89,12 @@ module IntervalDomain = struct
       | Finite x, _ when Z.equal x Z.zero -> Finite Z.zero
       | PosInf, PosInf | NegInf, NegInf   -> PosInf
       | PosInf, NegInf | NegInf, PosInf   -> NegInf
-      | _ -> PosInf
+      | _ -> match (a, b) with
+        | (NegInf, Finite n) | (Finite n, NegInf) when Z.lt n Z.zero -> PosInf
+        | (NegInf, Finite n) | (Finite n, NegInf) when Z.gt n Z.zero -> NegInf
+        | (PosInf, Finite n) | (Finite n, PosInf) when Z.lt n Z.zero -> NegInf
+        | (PosInf, Finite n) | (Finite n, PosInf) when Z.gt n Z.zero -> PosInf
+        | _ -> PosInf
     )
 
   let divide x y =
@@ -106,6 +111,8 @@ module IntervalDomain = struct
           | Finite vx, Finite vy -> Finite (Z.div vx vy)
           | PosInf, Finite vy when Z.gt vy Z.zero -> PosInf
           | NegInf, Finite vy when Z.gt vy Z.zero -> NegInf
+          | PosInf, Finite vy when Z.lt vy Z.zero -> NegInf
+          | NegInf, Finite vy when Z.lt vy Z.zero -> PosInf
           | _ -> PosInf
         )
         x y
@@ -133,19 +140,25 @@ module IntervalDomain = struct
 
   let is_bottom x = (x = EmptySet)
 
-  let widen x y =
-    match x, y with
+  let widen x y = match x, y with
     | EmptySet, b | b, EmptySet -> b
     | Range(l1, u1), Range(l2, u2) ->
-      let l =
-        if compare_bounds l2 l1 < 0 then NegInf
-        else l1
-      in
-      let u =
-        if compare_bounds u2 u1 > 0 then PosInf
-        else u1
-      in
-      Range(l, u)  
+        let l = 
+          if compare_bounds l2 l1 < 0 then
+            match l2 with
+            | Finite n when Z.equal n (Z.of_int (-128)) -> Finite (Z.of_int (-128))
+            | _ -> NegInf
+          else l1 
+        in
+        let u = 
+          if compare_bounds u2 u1 > 0 then
+            match u2 with
+            | Finite n when Z.equal n (Z.of_int 128) -> Finite (Z.of_int 128)
+            | Finite n when Z.equal n (Z.of_int 16) -> Finite (Z.of_int 16)
+            | _ -> PosInf
+          else u1 
+        in
+        Range(l, u)
 
   let unary v op =
     match op with
@@ -171,27 +184,7 @@ module IntervalDomain = struct
       (inter, inter)
 
     | Range(lx, ux), Range(ly, uy), AST_NOT_EQUAL ->
-      let inter = meet (Range(lx, ux)) (Range(ly, uy)) in
-      let x' =
-        match inter with
-        | Range(Finite v1, Finite v2) when Z.equal v1 v2 ->
-          let left_part =
-            if compare_bounds (Finite v1) lx > 0 then
-              Range(lx, Finite(Z.pred v1))
-            else
-              EmptySet
-          in
-          let right_part =
-            if compare_bounds (Finite v1) ux < 0 then
-              Range(Finite(Z.succ v1), ux)
-            else
-              EmptySet
-          in
-          join left_part right_part
-        | _ ->
-          Range(lx, ux)
-      in
-      (x', Range(ly, uy))
+      (Range(lx, ux), Range(ly, uy))
 
     | Range(lx, ux), Range(ly, uy), AST_LESS_EQUAL ->
       let x' = meet (Range(lx, ux)) (Range(NegInf, uy)) in

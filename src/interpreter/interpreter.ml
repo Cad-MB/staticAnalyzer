@@ -25,7 +25,9 @@ let trace = ref false
 
 
 let unroll = ref 0 
-let delay = ref 0 
+let delay = ref 0
+let widening_delay = ref 0
+let iteration_count = ref 0
 
 (* utilities *)
 (* ********* *)
@@ -149,25 +151,23 @@ module Interprete(D : DOMAIN) =
         D.join t f
 
     | AST_while (e,s) ->
-      let rec do_unroll (remain:int) (a:t) : t = 
-        if remain = 0 then
-          let rec fix (f:t -> t) (x:t) curr_delay : t =
-            let fx = f x in
-            if D.subset fx x then fx
-            else if curr_delay > 0 then 
-              let new_delay = curr_delay - 1 in
-              fix f fx new_delay
-            else fix f (D.widen x fx) curr_delay
-          in
-          let f x = D.join a (eval_stat (filter x e true) s) in
-          let inv = fix f a !delay in
-          filter inv e false
-        else
-          let body = eval_stat (filter a e true) s in 
-          let after = do_unroll (remain-1) body in
-          D.join after (filter a e false)
-      in
-      do_unroll !unroll a
+        let rec fix (f:t -> t) (x:t) : t =
+          let fx = eval_stat (filter x e true) s in
+          let fx' = D.join a fx in
+          if D.subset fx' x then 
+            fx'
+          else begin
+            if !iteration_count < !widening_delay then begin
+              iteration_count := !iteration_count + 1;
+              fix f (D.join x fx')
+            end else begin
+              fix f (D.widen x fx')
+            end
+          end
+        in
+        iteration_count := 0;
+        let inv = fix (fun x -> x) a in
+        filter inv e false
 
     | AST_assert e ->
       let res = filter a e false in
@@ -200,11 +200,9 @@ module Interprete(D : DOMAIN) =
 
   (* entry-point of the program analysis *)
   let eval_prog (l:prog) : unit =
-    (* simply analyze each statement in the program *)
+    iteration_count := 0;
     let _ = List.fold_left eval_stat (D.init()) l in
-    (* nothing useful to return *)
     Format.printf "analysis ended@\n";
     ()
-
 
 end : INTERPRETER)
