@@ -24,8 +24,8 @@ open Domain
 let trace = ref false
 
 
-let wide_delay = ref 0
 let unroll = ref 0 
+let delay = ref 0 
 
 (* utilities *)
 (* ********* *)
@@ -149,22 +149,25 @@ module Interprete(D : DOMAIN) =
         D.join t f
 
     | AST_while (e,s) ->
-      let rec fix (f : t -> t) (x : t) (d : int) (u : int) : t =
-        if u > 0 then
-          let fx = eval_stat (filter x e true) s in
-          fix f fx d (u - 1)
-        else if d > 0 then
-          let fx = f x in
-          if D.subset fx x then x
-          else fix f fx (d - 1) 0
+      let rec do_unroll (remain:int) (a:t) : t = 
+        if remain = 0 then
+          let rec fix (f:t -> t) (x:t) curr_delay : t =
+            let fx = f x in
+            if D.subset fx x then fx
+            else if curr_delay > 0 then 
+              let new_delay = curr_delay - 1 in
+              fix f fx new_delay
+            else fix f (D.widen x fx) curr_delay
+          in
+          let f x = D.join a (eval_stat (filter x e true) s) in
+          let inv = fix f a !delay in
+          filter inv e false
         else
-          let fx = f x in
-          if D.subset fx x then x
-          else fix f (D.widen x fx) 0 0
+          let body = eval_stat (filter a e true) s in 
+          let after = do_unroll (remain-1) body in
+          D.join after (filter a e false)
       in
-      let f x = D.join x (eval_stat (filter x e true) s) in
-      let inv = fix f a !wide_delay !unroll in
-      filter inv e false
+      do_unroll !unroll a
 
     | AST_assert e ->
       let res = filter a e false in

@@ -53,16 +53,11 @@ let main () =
 
      "-interval",
      Arg.Unit (fun () -> action := IntervalAnalysis.eval_prog),
-      "Use the interval abstract domain";
+     "Use the interval abstract domain";
 
-      "-delay",     
-      Arg.Set_int Interpreter.wide_delay,
-      "";
- 
-      "-unroll",
-      Arg.Set_int  (Interpreter.unroll),
-      "";
      (* options to add *)
+     (* -delay *)
+     (* -unroll *)
      (* -parity-interval *)
 
     ]
