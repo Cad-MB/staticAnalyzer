@@ -1,10 +1,3 @@
-(*
-  Cours "Typage et Analyse Statique" - Master STL
-  Sorbonne Université
-  Antoine Miné 2015-2022
-*)
-
-
 module ConcreteAnalysis =
   Interpreter.Interprete(Concrete_domain.Concrete)
 
@@ -18,23 +11,27 @@ module IntervalAnalysis =
     (Non_relational_domain.NonRelational
       (Interval_domain.IntervalDomain))
 
-(* parse and print filename *)
+module ParityIntervalAnalysis =
+  Interpreter.Interprete
+    (Non_relational_domain.NonRelational
+       (Reduced_product.ParityInterval))
+
+module DisjunctiveAnalysis =
+  Interpreter.Interprete
+    (Non_relational_domain.NonRelational
+       (Disjunctive_domain.DisjunctiveIntervalDomain))
+
 let doit filename =
   let prog = File_parser.parse_file filename in
   Abstract_syntax_printer.print_prog Format.std_formatter prog
 
-
-(* default action: print back the source *)
 let eval_prog prog =
   Abstract_syntax_printer.print_prog Format.std_formatter prog
 
-(* entry point *)
 let main () =
   let action = ref eval_prog in
   let files = ref [] in
-  (* parse arguments *)
   Arg.parse
-    (* handle options *)
     ["-trace",
      Arg.Set Interpreter.trace,
      "Show the analyzer state after each statement";
@@ -55,18 +52,25 @@ let main () =
      Arg.Unit (fun () -> action := IntervalAnalysis.eval_prog),
      "Use the interval abstract domain";
 
+     "-parity-interval",
+     Arg.Unit (fun () -> action := ParityIntervalAnalysis.eval_prog),
+     "Use the reduced product of parity and interval domains";
+
      "-delay",
-     Arg.Set_int Interpreter.widening_delay,
+     Arg.Set_int Interpreter.wide_delay,
      "Delay widening by n iterations";
 
-     (* options to add *)
-     (* -unroll *)
-     (* -parity-interval *)
+     "-unroll",
+     Arg.Set_int Interpreter.unroll,
+     "Number of times to unroll loops";
 
+     "-disjunctive",
+     Arg.Unit (fun () -> action := DisjunctiveAnalysis.eval_prog),
+     "Use the disjunctive interval domain";
     ]
-    (* handle filenames *)
     (fun filename -> files := (!files)@[filename])
-    "";
+    "Usage: ./analyzer [options] source_files";
+
   List.iter
     (fun filename ->
       let prog = File_parser.parse_file filename in

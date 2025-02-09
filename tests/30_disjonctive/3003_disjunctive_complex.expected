@@ -1,0 +1,2 @@
+tests/30_disjunctive/3003_disjunctive_complex.c:14.2-12: [ x in {[5;5] ∨ [10;10]}, y in {[10;10] ∨ [20;20]} ]
+analysis ended

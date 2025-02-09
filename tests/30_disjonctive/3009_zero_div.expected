@@ -1,0 +1,2 @@
+tests/30_disjonctive/3009_zero_div.c:11.4-14: [ x in {[42;42]}, y in {[0;0]} ]
+analysis ended

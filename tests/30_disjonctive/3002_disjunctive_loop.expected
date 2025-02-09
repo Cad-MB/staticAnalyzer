@@ -1,0 +1,2 @@
+tests/30_disjonctive/3002_disjunctive_loop.c:11.4-14: [ x in {[10;12]} ]
+analysis ended

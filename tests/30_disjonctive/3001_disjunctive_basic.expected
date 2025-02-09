@@ -1,0 +1,2 @@
+tests/30_disjunctive/3001_disjunctive_basic.c:8.2-12: [ x in {[1;1] ∨ [4;4]} ]
+analysis ended

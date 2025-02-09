@@ -1,0 +1,2 @@
+tests/30_disjonctive/3007_arithmetic.c:11.4-14: [ x in {[3;3]}, y in {[4;4]} ]
+analysis ended

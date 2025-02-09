@@ -1,236 +1,286 @@
-(*
-  Cours "Typage et Analyse Statique" - Master STL
-  Sorbonne Université
-  Antoine Miné 2015-2022
-*)
-
-(* domaine des intervalles pour l'analyse statique *)
-
 open Abstract_syntax_tree
+open Value_domain  
 
 type bound =
   | PosInf
   | NegInf
-  | Finite of Z.t
+  | Int of Z.t
 
-type interval =
-  | Range of bound * bound
-  | EmptySet
+type intervalTyp =
+  | Iv of bound * bound
+  | BOT
 
-module BoundOps = struct
-  let compare_bounds a b = match a, b with
+module IntervalDomain : VALUE_DOMAIN with type t = intervalTyp = struct
+
+  type t = intervalTyp
+
+  (* Compare deux bornes, en tenant compte des bornes infinies *)
+  let compare_bound (a:bound) (b:bound) : int =
+    match a, b with
     | NegInf, NegInf | PosInf, PosInf -> 0
-    | NegInf, _ | _, PosInf -> -1
-    | PosInf, _ | _, NegInf -> 1
-    | Finite x, Finite y -> Z.compare x y
+    | NegInf, _    | _, PosInf    -> -1
+    | PosInf, _    | _, NegInf    ->  1
+    | Int i, Int j -> Z.compare i j
 
-  let min_bound a b = if compare_bounds a b <= 0 then a else b
-  let max_bound a b = if compare_bounds a b >= 0 then a else b
+  let min_bound (a:bound) (b:bound) : bound =
+    let x = compare_bound a b in
+    if x <= 0 then a else b
 
-  let negate = function
-    | PosInf -> NegInf
-    | NegInf -> PosInf
-    | Finite x -> Finite (Z.neg x)
+  let max_bound (a:bound) (b:bound) : bound =
+    let x = compare_bound a b in
+    if x >= 0 then a else b
 
-  let bound_succ = function
-    | Finite z -> Finite (Z.succ z)
-    | NegInf -> NegInf
-    | PosInf -> PosInf
+  (* Inverse le signe d'une borne (PosInf <-> NegInf) *)
+  let negate_bound = function
+    | PosInf    -> NegInf
+    | NegInf    -> PosInf
+    | Int x   -> Int (Z.neg x)
 
-  let bound_pred = function
-    | Finite z -> Finite (Z.pred z)
-    | NegInf -> NegInf
-    | PosInf -> PosInf
-end
+  let decrement_bound = function
+    | PosInf    -> PosInf
+    | NegInf    -> NegInf
+    | Int a   -> Int (Z.sub a Z.one)
 
-module IntervalDomain = struct
-  open BoundOps
+  let increment_bound = function
+    | PosInf    -> PosInf
+    | NegInf    -> NegInf
+    | Int a   -> Int (Z.add a Z.one)
 
-  type t = interval
-
-  let create l u =
-    if compare_bounds l u > 0 then EmptySet else Range(l, u)
-
-  let print fmt = function
-    | EmptySet -> Format.fprintf fmt "⊥"
-    | Range(l, u) ->
-      let display fmt = function
-        | Finite x -> Format.fprintf fmt "%s" (Z.to_string x)
-        | PosInf   -> Format.fprintf fmt "+∞"
-        | NegInf   -> Format.fprintf fmt "-∞"
-      in
-      Format.fprintf fmt "[%a;%a]" display l display u
-
-  let apply_op op x y =
+  let gt_value (x:bound) (y:bound) : bool =
     match x, y with
-    | EmptySet, _ | _, EmptySet -> EmptySet
-    | Range(l1, u1), Range(l2, u2) ->
-      let vals = [op l1 l2; op l1 u2; op u1 l2; op u1 u2] in
-      create
-        (List.fold_left min_bound PosInf vals)
-        (List.fold_left max_bound NegInf vals)
+    | NegInf, _  | _, PosInf -> false
+    | PosInf, _  | _, NegInf -> true
+    | Int v1, Int v2     -> Z.gt v1 v2
 
-  let add =
-    apply_op (fun a b ->
-      match a, b with
-      | Finite x, Finite y -> Finite (Z.add x y)
-      | NegInf, _ | _, NegInf -> NegInf
-      | PosInf, _ | _, PosInf -> PosInf
-    )
+  let max_value x y = not (gt_value y x)
 
-  let sub x y =
-    add x (apply_op (fun a _ -> negate a) y y)
+  (* Applique f (opération arithmétique sur Z) aux bornes de deux intervalles *)
+  let lift2 (f: Z.t -> Z.t -> Z.t) (x:t) (y:t) : t =
+    match x, y with
+    | BOT, _ | _, BOT -> BOT
+    | Iv(a, b), Iv(c, d) ->
+      begin match a,b,c,d with
+      | Int a, PosInf, Int c,  _    
+      | Int a,     _, Int c, PosInf -> Iv(Int (f a c), PosInf)
+      | Int a, Int b, Int c, Int d ->
+          Iv(Int (f a c), Int (f b d))
+      | NegInf,  _,   _,     PosInf  
+      | _,    PosInf, NegInf,   _    
+      | NegInf, PosInf, _,      _    
+      | _,     _,   NegInf,  PosInf  
+        -> Iv(NegInf, PosInf)
+      | NegInf, Int b, _, Int d
+      | _, Int b, NegInf, Int d
+        -> Iv(NegInf, Int (f b d))
+      | _ -> BOT
+      end
 
-  let multiply =
-    apply_op (fun a b ->
-      match a, b with
-      | Finite x, Finite y -> Finite (Z.mul x y)
-      | _, Finite y when Z.equal y Z.zero -> Finite Z.zero
-      | Finite x, _ when Z.equal x Z.zero -> Finite Z.zero
-      | PosInf, PosInf | NegInf, NegInf   -> PosInf
-      | PosInf, NegInf | NegInf, PosInf   -> NegInf
-      | _ -> match (a, b) with
-        | (NegInf, Finite n) | (Finite n, NegInf) when Z.lt n Z.zero -> PosInf
-        | (NegInf, Finite n) | (Finite n, NegInf) when Z.gt n Z.zero -> NegInf
-        | (PosInf, Finite n) | (Finite n, PosInf) when Z.lt n Z.zero -> NegInf
-        | (PosInf, Finite n) | (Finite n, PosInf) when Z.gt n Z.zero -> PosInf
-        | _ -> PosInf
-    )
+  let top = Iv(NegInf, PosInf)
 
-  let divide x y =
-    match y with
-    | Range(Finite z1, Finite z2) when Z.equal z1 Z.zero && Z.equal z2 Z.zero ->
-      EmptySet
-    | Range(Finite _, Finite z) when Z.equal z Z.zero ->
-      EmptySet
+  let bottom = BOT
+
+  let const (c:Z.t) = Iv(Int c, Int c)
+
+  let is_bottom (v:t) =
+    (v = BOT)
+
+  let rand (a:Z.t) (b:Z.t) : t =
+    if Z.gt a b then BOT
+    else Iv(Int a, Int b)
+
+  let add (x:t) (y:t) : t =
+    lift2 Z.add x y
+
+  let neg = function
+    | BOT -> BOT
+    | Iv(a,b) -> Iv(negate_bound b, negate_bound a)
+
+  let sub (x:t) (y:t) : t =
+    lift2 Z.add x (neg y)
+
+  (* Calcule le produit min et max possible en tenant compte des combinaisons de bornes *)
+  let mul (x: t) (y: t) : t =
+    match x, y with
+    | BOT, _ | _, BOT -> BOT
+    | Iv(Int a, Int b), Iv(Int c, Int d) ->
+       let candidates = [ Z.mul a c; Z.mul a d; Z.mul b c; Z.mul b d ] in
+       let mini = List.fold_left Z.min (List.hd candidates) (List.tl candidates) in
+       let maxi = List.fold_left Z.max (List.hd candidates) (List.tl candidates) in
+       Iv(Int mini, Int maxi)
+    | Iv(_, _), Iv(_, _) ->
+       Iv(NegInf, PosInf)
+
+  (* Division naïve, calcule borne min et max parmi les divisions possibles *)
+  let div (x:t) (y:t) : t =
+    match x, y with
+    | _, Iv(_, Int y2) when Z.equal y2 Z.zero ->
+       BOT
+    | Iv(Int a, Int b), Iv(Int c, Int d) ->
+       let candidates = [ Z.div a c; Z.div a d; Z.div b c; Z.div b d ] in
+       let mini = List.fold_left Z.min (List.hd candidates) (List.tl candidates) in
+       let maxi = List.fold_left Z.max (List.hd candidates) (List.tl candidates) in
+       Iv(Int mini, Int maxi)
     | _ ->
-      apply_op
-        (fun a b ->
-          match a, b with
-          | Finite _, Finite vy when Z.equal vy Z.zero -> Finite Z.zero
-          | Finite vx, Finite vy -> Finite (Z.div vx vy)
-          | PosInf, Finite vy when Z.gt vy Z.zero -> PosInf
-          | NegInf, Finite vy when Z.gt vy Z.zero -> NegInf
-          | PosInf, Finite vy when Z.lt vy Z.zero -> NegInf
-          | NegInf, Finite vy when Z.lt vy Z.zero -> PosInf
-          | _ -> PosInf
-        )
-        x y
+       BOT
 
-  let join x y =
+  (* Intersection (meet) de deux intervalles, retourne BOT si disjoints *)
+  let meet (x:t) (y:t) : t =
     match x, y with
-    | EmptySet, b | b, EmptySet -> b
-    | Range(l1, u1), Range(l2, u2) ->
-      create (min_bound l1 l2) (max_bound u1 u2)
+    | BOT, _ | _, BOT -> BOT
+    | Iv(a1, b1), Iv(a2, b2) ->
+       if gt_value a2 b1 || gt_value a1 b2 then BOT
+       else Iv(max_bound a1 a2, min_bound b1 b2)
 
-  let meet x y =
+  (* Réunion (join) de deux intervalles *)
+  let join (a:t) (b:t) : t =
+    match a,b with
+    | BOT, x | x, BOT -> x
+    | Iv(i, j), Iv(k, l) ->
+      Iv(min_bound i k, max_bound j l)
+
+  (* Teste si l'intervalle a est inclus dans b *)
+  let subset (a:t) (b:t) : bool =
+    match a,b with
+    | BOT, _ -> true
+    | _, BOT -> false
+    | Iv(a1, b1), Iv(a2, b2) ->
+       compare_bound a2 a1 <= 0 && compare_bound b1 b2 <= 0
+
+  (* Widening pour garantir la convergence en analyse abstraite *)
+  let widen (x:t) (y:t) : t =
     match x, y with
-    | EmptySet, _ | _, EmptySet -> EmptySet
-    | Range(l1, u1), Range(l2, u2) ->
-      let nl = max_bound l1 l2 in
-      let nu = min_bound u1 u2 in
-      if compare_bounds nl nu > 0 then EmptySet else Range(nl, nu)
+    | BOT, _ -> y
+    | _, BOT -> x
+    | Iv(a, b), Iv(c, d) ->
+       let new_left  = if max_value c a then a else NegInf in
+       let new_right = if max_value b d then b else PosInf in
+       Iv(new_left, new_right)
 
-  let subset x y =
-    match x, y with
-    | EmptySet, _ -> true
-    | _, EmptySet -> false
-    | Range(l1, u1), Range(l2, u2) ->
-      compare_bounds l2 l1 <= 0 && compare_bounds u1 u2 <= 0
-
-  let is_bottom x = (x = EmptySet)
-
-  let widen x y = match x, y with
-    | EmptySet, b | b, EmptySet -> b
-    | Range(l1, u1), Range(l2, u2) ->
-        let l = 
-          if compare_bounds l2 l1 < 0 then
-            match l2 with
-            | Finite n when Z.equal n (Z.of_int (-128)) -> Finite (Z.of_int (-128))
-            | _ -> NegInf
-          else l1 
-        in
-        let u = 
-          if compare_bounds u2 u1 > 0 then
-            match u2 with
-            | Finite n when Z.equal n (Z.of_int 128) -> Finite (Z.of_int 128)
-            | Finite n when Z.equal n (Z.of_int 16) -> Finite (Z.of_int 16)
-            | _ -> PosInf
-          else u1 
-        in
-        Range(l, u)
-
-  let unary v op =
+  let unary (x:t) (op:int_unary_op) : t =
     match op with
-    | AST_UNARY_PLUS  -> v
-    | AST_UNARY_MINUS ->
-      match v with
-      | EmptySet -> EmptySet
-      | Range(l, u) -> Range(negate u, negate l)
+    | AST_UNARY_PLUS  -> x
+    | AST_UNARY_MINUS -> neg x
 
-  let binary x y = function
+  let binary (x:t) (y:t) (op:int_binary_op) : t =
+    match op with
     | AST_PLUS      -> add x y
     | AST_MINUS     -> sub x y
-    | AST_MULTIPLY  -> multiply x y
-    | AST_DIVIDE    -> divide x y
+    | AST_MULTIPLY  -> mul x y
+    | AST_DIVIDE    -> div x y
 
-  let compare x y op =
-    match x, y, op with
-    | EmptySet, _, _ | _, EmptySet, _ ->
-      (EmptySet, EmptySet)
+  (* Gère le cas où on impose x != y *)
+  let not_equal a b = match a, b with
+    | BOT, _ | _, BOT -> BOT, BOT
+    | Iv(x, y), Iv(v, w) when compare_bound x v = 0 && compare_bound y w = 0 -> a, b
+    | Iv(x, y), Iv(v, _) when compare_bound x v = 0 -> Iv(increment_bound x, y), b
+    | Iv(x, y), Iv(_, w) when compare_bound y w = 0 -> Iv(x, decrement_bound y), b
+    | _, _ -> let m = meet a b in m, m
 
-    | Range(lx, ux), Range(ly, uy), AST_EQUAL ->
-      let inter = meet (Range(lx, ux)) (Range(ly, uy)) in
-      (inter, inter)
+  (* Compare deux intervalles selon l'opérateur de comparaison et renvoie deux intervalles restreints *)
+  let compare x y op = 
+    match op with
+    | AST_EQUAL -> 
+      let m = meet x y in
+      m, m
+    | AST_NOT_EQUAL -> not_equal x y
+    | AST_GREATER_EQUAL -> 
+      (match x, y with
+      | BOT, _ | _, BOT -> BOT, BOT
+      | Iv(a1,b1), Iv(a2,b2) ->
+        if gt_value a2 b1 then BOT, BOT
+        else begin
+          let nx = Iv(max_bound a1 a2, b1) in 
+          let ny = Iv(a2, min_bound b1 b2) in
+          if nx = BOT || ny = BOT then BOT, BOT 
+          else nx, ny
+        end)
+    | AST_GREATER ->
+      (match x, y with 
+      | BOT, _ | _, BOT -> BOT, BOT
+      | Iv(a1,b1), Iv(a2,b2) ->
+        if compare_bound b1 a2 <= 0 then BOT, BOT
+        else begin
+          let nx = Iv(max_bound a1 (increment_bound a2), b1) in
+          let ny = Iv(a2, min_bound (decrement_bound b1) b2) in
+          if nx = BOT || ny = BOT then BOT, BOT
+          else nx, ny
+        end)
+    | AST_LESS -> 
+      (match x, y with
+      | BOT, _ | _, BOT -> BOT, BOT 
+      | Iv(a1,b1), Iv(a2,b2) ->
+        if compare_bound b1 a2 < 0 then (x, y)  
+        else begin
+          let nx = Iv(a1, min_bound b1 (decrement_bound b2)) in
+          let ny = match b2 with
+            | PosInf -> y  
+            | _ -> Iv(max_bound a2 (increment_bound a1), b2)
+          in
+          if nx = BOT || ny = BOT then BOT, BOT
+          else nx, ny
+        end)
+    | AST_LESS_EQUAL -> 
+      (match x, y with
+      | BOT, _ | _, BOT -> BOT, BOT
+      | Iv(a1,b1), Iv(a2,b2) ->
+        if compare_bound b1 a2 < 0 then (x, y)
+        else begin
+          let nx = Iv(a1, min_bound b1 b2) in
+          let ny = match b2 with
+            | PosInf -> y
+            | _ -> Iv(max_bound a2 a1, b2)
+          in
+          if nx = BOT || ny = BOT then BOT, BOT
+          else nx, ny
+        end)
 
-    | Range(lx, ux), Range(ly, uy), AST_NOT_EQUAL ->
-      (Range(lx, ux), Range(ly, uy))
-
-    | Range(lx, ux), Range(ly, uy), AST_LESS_EQUAL ->
-      let x' = meet (Range(lx, ux)) (Range(NegInf, uy)) in
-      let y' = meet (Range(ly, uy)) (Range(lx, PosInf)) in
-      (x', y')
-
-    | Range(lx, ux), Range(ly, uy), AST_LESS ->
-      let x' = meet (Range(lx, ux)) (Range(NegInf, bound_pred uy)) in
-      let y' = meet (Range(ly, uy)) (Range(bound_succ lx, PosInf)) in
-      (x', y')
-
-    | Range(lx, ux), Range(ly, uy), AST_GREATER_EQUAL ->
-      let x' = meet (Range(lx, ux)) (Range(ly, PosInf)) in
-      let y' = meet (Range(ly, uy)) (Range(NegInf, ux)) in
-      (x', y')
-
-    | Range(lx, ux), Range(ly, uy), AST_GREATER ->
-      let x' = meet (Range(lx, ux)) (Range(bound_succ ly, PosInf)) in
-      let y' = meet (Range(ly, uy)) (Range(NegInf, bound_pred ux)) in
-      (x', y')
-
-  let bwd_unary x op r =
+  (* Backward transfer unitaire: restreint x selon le résultat r *)
+  let bwd_unary (x:t) (op:int_unary_op) (r:t) : t =
     match op with
     | AST_UNARY_PLUS  -> meet x r
-    | AST_UNARY_MINUS -> meet x (sub EmptySet r)
+    | AST_UNARY_MINUS -> meet x (neg r)
 
-  let bwd_binary x y op r =
+  (* Backward transfer binaire: restreint x et y selon le résultat r *)
+  let bwd_binary (x:t) (y:t) (op:int_binary_op) (r:t) : (t * t) =
     match op with
     | AST_PLUS ->
-      (meet x (sub r y), meet y (sub r x))
+      let x' = meet x (sub r y) in
+      let y' = meet y (sub r x) in
+      (x', y')
     | AST_MINUS ->
-      (meet x (add y r), meet y (sub x r))
+      let x' = meet x (add y r) in
+      let y' = meet y (sub x r) in
+      (x', y')
     | AST_MULTIPLY ->
-      (meet x (divide r y), meet y (divide r x))
+      let containsZero o =
+        subset (Iv(Int Z.zero, Int Z.zero)) o
+      in
+      let x' =
+        if containsZero y && containsZero r
+        then x
+        else meet x (div r y)
+      in
+      let y' =
+        if containsZero x && containsZero r
+        then y
+        else meet y (div r x)
+      in
+      (x', y')
     | AST_DIVIDE ->
       (x, y)
 
-  let top = Range(NegInf, PosInf)
-  let bottom = EmptySet
-
-  let singleton c = Range(Finite c, Finite c)
-  let const c = singleton c
-
-  let random_range a b =
-    if Z.compare a b > 0 then EmptySet
-    else Range(Finite a, Finite b)
-
-  let rand x y = random_range x y
+  let print fmt x =
+    let string_of_bound = function
+      | NegInf   -> "-∞"
+      | PosInf   -> "+∞"
+      | Int z  -> Z.to_string z
+    in
+    match x with
+    | BOT -> Format.fprintf fmt "⊥"
+    | Iv (NegInf, PosInf) -> Format.fprintf fmt "[-∞;+∞]"
+    | Iv (NegInf, Int b) -> Format.fprintf fmt "[-∞;%s]" (Z.to_string b)
+    | Iv (Int a, PosInf) -> Format.fprintf fmt "[%s;+∞]" (Z.to_string a)
+    | Iv (Int a, Int b) -> Format.fprintf fmt "[%s;%s]" (Z.to_string a) (Z.to_string b)
+    | Iv (a, b) ->
+        Format.fprintf fmt "[%s;%s]" (string_of_bound a) (string_of_bound b)
 end

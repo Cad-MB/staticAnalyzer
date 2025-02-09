@@ -1,39 +1,14 @@
-(*
-  Cours "Typage et Analyse Statique" - Master STL
-  Sorbonne Université
-  Antoine Miné 2015-2022
-*)
-
-
-(*
-  Abstract interpreter by induction on the syntax.
-  Parameterized by an abstract domain.
-*)
-
-
 open Abstract_syntax_tree
 open Abstract_syntax_printer
 open Domain
 
-
-(* parameters *)
-(* ********** *)
-
-
-(* for debugging *)
 let trace = ref false
-
 
 let unroll = ref 0 
 let delay = ref 0
-let widening_delay = ref 0
+let wide_delay = ref 0
 let iteration_count = ref 0
 
-(* utilities *)
-(* ********* *)
-
-
-(* print errors *)
 let error ext s =
   Format.printf "%s: ERROR: %s@\n" (string_of_extent ext) s
 
@@ -41,52 +16,22 @@ let fatal_error ext s =
   Format.printf "%s: FATAL ERROR: %s@\n" (string_of_extent ext) s;
   exit 1
 
-
-
-(* interpreter signature *)
-(* ********************* *)
-
-
-(* an interpreter only exports a single function, which does all the work *)
 module type INTERPRETER =
 sig
-  (* analysis of a program, given its abstract syntax tree *)
   val eval_prog: prog -> unit
 end
-
-
-
-(* interpreter *)
-(* *********** *)
-
-
-(* the interpreter is parameterized by the choice of a domain D
-   of signature Domain.DOMAIN
- *)
 
 module Interprete(D : DOMAIN) =
 (struct
 
-  (* abstract element representing a set of environments;
-     given by the abstract domain
-   *)
   type t = D.t
 
-
-  (* utility function to reduce the compexity of testing boolean expressions;
-     it handles the boolean operators &&, ||, ! internally, by induction
-     on the syntax, and call the domain's function D.compare, to handle
-     the arithmetic part
-
-     if r=true, keep the states that may satisfy the expression;
-     if r=false, keep the states that may falsify the expression
-   *)
+  (* Filtre l'état en fonction d'une expression booléenne et d'un booléen.
+     Contribue à l'abstraction logique en exploitant la sémantique du domaine D. *)
   let filter (a:t) (e:bool_expr ext) (r:bool) : t =
 
-    (* recursive exploration of the expression *)
     let rec doit a (e,_) r = match e with
 
-    (* boolean part, handled recursively *)
     | AST_bool_unary (AST_NOT, e) ->
         doit a e (not r)
     | AST_bool_binary (AST_AND, e1, e2) ->
@@ -96,9 +41,7 @@ module Interprete(D : DOMAIN) =
     | AST_bool_const b ->
         if b = r then a else D.bottom ()
 
-    (* arithmetic comparison part, handled by D *)
     | AST_compare (cmp, (e1,_), (e2,_)) ->
-        (* utility function to negate the comparison, when r=false *)
         let inv = function
         | AST_EQUAL         -> AST_NOT_EQUAL
         | AST_NOT_EQUAL     -> AST_EQUAL
@@ -113,61 +56,56 @@ module Interprete(D : DOMAIN) =
     in
     doit a e r
 
-
-  (* interprets a statement, by induction on the syntax *)
+  (* Évalue une instruction en tenant compte du domaine abstrait D 
+     et construit la sémantique pas à pas (interprétation abstraite). *)
   let rec eval_stat (a:t) ((s,ext):stat ext) : t =
     let r = match s with
 
     | AST_block (decl,inst) ->
-        (* add the local variables *)
         let a =
           List.fold_left
             (fun a ((_,v),_) -> D.add_var a v)
             a decl
         in
-        (* interpret the block recursively *)
         let a = List.fold_left eval_stat a inst in
-        (* destroy the local variables *)
         List.fold_left
           (fun a ((_,v),_) -> D.del_var a v)
           a decl
 
     | AST_assign ((i,_),(e,_)) ->
-        (* assigment is delegated to the domain *)
         D.assign a i e
 
     | AST_if (e,s1,Some s2) ->
-        (* compute both branches *)
         let t = eval_stat (filter a e true ) s1 in
         let f = eval_stat (filter a e false) s2 in
-        (* then join *)
         D.join t f
 
     | AST_if (e,s1,None) ->
-        (* compute both branches *)
         let t = eval_stat (filter a e true ) s1 in
         let f = filter a e false in
-        (* then join *)
         D.join t f
 
-    | AST_while (e,s) ->
-        let rec fix (f:t -> t) (x:t) : t =
-          let fx = eval_stat (filter x e true) s in
-          let fx' = D.join a fx in
-          if D.subset fx' x then 
-            fx'
-          else begin
-            if !iteration_count < !widening_delay then begin
-              iteration_count := !iteration_count + 1;
-              fix f (D.join x fx')
-            end else begin
-              fix f (D.widen x fx')
-            end
-          end
-        in
-        iteration_count := 0;
-        let inv = fix (fun x -> x) a in
-        filter inv e false
+    (* Implémente un point fixe (fixpoint_iteration) pour la boucle.
+       Combine un unroll initial et l'utilisation d'une étape de widening
+       pour contrôler la convergence dans le domaine D. *)
+    | AST_while (e, s) ->
+      let rec fixpoint_iteration (transform: t -> t) (current: t)
+        (widen_steps: int) (unroll_steps: int): t =
+        if unroll_steps > 0 then
+          let next = eval_stat (filter current e true) s in
+          fixpoint_iteration transform next widen_steps (unroll_steps - 1)
+        else if widen_steps = 0 then
+          let altered = transform current in
+          if D.subset altered current then altered
+          else fixpoint_iteration transform (D.widen current altered) 0 0
+        else
+          let altered = transform current in
+          if D.subset altered current then altered
+          else fixpoint_iteration transform altered (widen_steps - 1) 0
+      in
+      let transform_func x = D.join a (eval_stat (filter x e true) s) in
+      let loop_invariant = fixpoint_iteration transform_func a !wide_delay !unroll in
+      filter loop_invariant e false
 
     | AST_assert e ->
       let res = filter a e false in
@@ -186,19 +124,15 @@ module Interprete(D : DOMAIN) =
         a
 
     | AST_HALT ->
-        (* after halt, there are no more environments *)
         D.bottom ()
-
     in
 
-    (* tracing, useful for debugging *)
     if !trace then
       Format.printf "stat trace: %s: %a@\n"
         (string_of_extent ext) D.print_all r;
     r
 
-
-  (* entry-point of the program analysis *)
+  (* Démarre l'évaluation du programme dans l'état initial, puis affiche la fin de l'analyse. *)
   let eval_prog (l:prog) : unit =
     iteration_count := 0;
     let _ = List.fold_left eval_stat (D.init()) l in

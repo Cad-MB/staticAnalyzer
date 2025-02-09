@@ -1,0 +1,2 @@
+tests/30_disjunctive/3005_multi_vars.c:15.2-12: [ x in {[1;1] ∨ [20;20]}, y in {[2;2] ∨ [10;10]}, z in {[10;10] ∨ [20;20]} ]
+analysis ended
